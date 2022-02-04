@@ -64,8 +64,8 @@ require'nvim-tree'.setup {
     }
   },
   update_focused_file = {
-    enable      = false,
-    update_cwd  = false,
+    enable      = true,
+    update_cwd  = true,
     ignore_list = {}
   },
   system_open = {
@@ -102,7 +102,6 @@ require'nvim-tree'.setup {
 }
 EOF
 
-nnoremap <leader>t :NvimTreeToggle<CR>
-nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
+nnoremap <space>t :NvimTreeToggle<CR>
+nnoremap <space>tr :NvimTreeRefresh<CR>
 
