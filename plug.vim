@@ -34,5 +34,9 @@ call plug#begin()
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
     Plug 'airblade/vim-rooter'
+
+    " Bufferline
+    Plug 'akinsho/bufferline.nvim'
+
 call plug#end()
 
