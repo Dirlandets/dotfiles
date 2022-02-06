@@ -24,6 +24,12 @@ set backupskip=/tmp/*,/private/tmp/*
 
 filetype indent on      " load filetype-specific indent files
 
+" true color
+" termguicolor breaks the colors fix later
+if (has('termguicolors'))
+  set termguicolors
+endif
+
 " Imports "{{{
 " ---------------------------------------------------------------------
 runtime ./plug.vim
@@ -34,7 +40,6 @@ if has("unix")
     runtime ./macos.vim
   endif
 endif
-
 runtime ./maps.lua
 runtime ./fzf.vim
 runtime ./nvim_tree.vim
@@ -43,16 +48,11 @@ runtime ./ale.vim
 runtime ./treesitter.lua
 runtime ./feline.lua
 runtime ./bufs.vim
+runtime ./gitsigns.lua
 "}}}
 
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
-
-" true color
-" termguicolor breaks the colors fix later
-if (has('termguicolors'))
-  set termguicolors
-endif
 " colorscheme dracula
 colorscheme monokai
 " colorscheme monokai_pro

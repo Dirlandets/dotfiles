@@ -38,5 +38,9 @@ call plug#begin()
     " Bufferline
     Plug 'akinsho/bufferline.nvim'
 
+    " GitSigns installation
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'lewis6991/gitsigns.nvim'
+
 call plug#end()
 
