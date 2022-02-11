@@ -6,10 +6,12 @@ set scrolloff=7
 set title
 set autoindent
 set background=dark
+set ignorecase
 
+set splitright
+set splitbelow
 syntax enable
 
-" set cursorline              " highlight current cursorline (can load CPU very hight)
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
@@ -18,12 +20,18 @@ set smarttab
 set autoindent
 set fileformat=unix
 set colorcolumn=80
+set cursorline
 
 set nobackup
 set backupskip=/tmp/*,/private/tmp/*
 
 filetype indent on      " load filetype-specific indent files
 
+set lazyredraw
+set synmaxcol=128
+syntax sync minlines=256
+
+:set timeoutlen=250
 " true color
 " termguicolor breaks the colors fix later
 if (has('termguicolors'))
@@ -47,16 +55,15 @@ runtime ./bufferline.lua
 runtime ./ale.vim
 runtime ./treesitter.lua
 runtime ./feline.lua
-runtime ./bufs.vim
 runtime ./gitsigns.lua
 "}}}
 
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
 " colorscheme dracula
-colorscheme monokai
+" colorscheme monokai
 " colorscheme monokai_pro
-" colorscheme monokai_soda
+colorscheme monokai_soda
 " colorscheme monokai_ristretto
 "}}}
 
@@ -160,7 +167,11 @@ end
 
 -- Use a loop to conveniently call 'setup' on multiple servers and
 -- map buffer local keybindings when the language server attaches
-local servers = { 'pyright', 'rust_analyzer', 'tsserver' }
+local servers = {
+    'pyright',
+    'rust_analyzer',
+    'tsserver',
+}
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
@@ -171,4 +182,62 @@ for _, lsp in pairs(servers) do
   }
 end
 EOF
+
+" Command ':Bclose' executes ':bd' to delete buffer in current window.
+" The window will show the alternate buffer (Ctrl-^) if it exists,
+" or the previous buffer (:bp), or a blank buffer if no previous.
+" Command ':Bclose!' is the same, but executes ':bd!' (discard changes).
+" An optional argument can specify which buffer to close (name or number).
+function! s:Bclose(bang, buffer)
+  if empty(a:buffer)
+    let btarget = bufnr('%')
+  elseif a:buffer =~ '^\d\+$'
+    let btarget = bufnr(str2nr(a:buffer))
+  else
+    let btarget = bufnr(a:buffer)
+  endif
+  if btarget < 0
+    call s:Warn('No matching buffer for '.a:buffer)
+    return
+  endif
+  if empty(a:bang) && getbufvar(btarget, '&modified')
+    call s:Warn('No write since last change for buffer '.btarget.' (use :Bclose!)')
+    return
+  endif
+  " Numbers of windows that view target buffer which we will delete.
+  let wnums = filter(range(1, winnr('$')), 'winbufnr(v:val) == btarget')
+  if !g:bclose_multiple && len(wnums) > 1
+    call s:Warn('Buffer is in multiple windows (use ":let bclose_multiple=1")')
+    return
+  endif
+  let wcurrent = winnr()
+  for w in wnums
+    execute w.'wincmd w'
+    let prevbuf = bufnr('#')
+    if prevbuf > 0 && buflisted(prevbuf) && prevbuf != btarget
+      buffer #
+    else
+      bprevious
+    endif
+    if btarget == bufnr('%')
+      " Numbers of listed buffers which are not the target to be deleted.
+      let blisted = filter(range(1, bufnr('$')), 'buflisted(v:val) && v:val != btarget')
+      " Listed, not target, and not displayed.
+      let bhidden = filter(copy(blisted), 'bufwinnr(v:val) < 0')
+      " Take the first buffer, if any (could be more intelligent).
+      let bjump = (bhidden + blisted + [-1])[0]
+      if bjump > 0
+        execute 'buffer '.bjump
+      else
+        execute 'enew'.a:bang
+      endif
+    endif
+  endfor
+  execute 'bdelete'.a:bang.' '.btarget
+  execute wcurrent.'wincmd w'
+endfunction
+command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose(<q-bang>, <q-args>)
+nnoremap <silent> <Leader>bd :Bclose<CR>
+
+map gw :Bclose<cr>
 
