@@ -53,6 +53,7 @@ runtime ./fzf.vim
 runtime ./nvim_tree.vim
 runtime ./bufferline.lua
 runtime ./ale.vim
+runtime ./comment.lua
 runtime ./treesitter.lua
 runtime ./feline.lua
 runtime ./gitsigns.lua

@@ -42,5 +42,7 @@ call plug#begin()
     Plug 'nvim-lua/plenary.nvim'
     Plug 'lewis6991/gitsigns.nvim'
 
+    " Toggle comments
+    Plug 'numToStr/Comment.nvim'
 call plug#end()
 
