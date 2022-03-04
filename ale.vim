@@ -1,11 +1,11 @@
 " Check Python files with flake8 and pylint.
 let g:ale_linters = {'python': ['flake8', 'mypy']}
 " Disable warnings about trailing whitespace for Python files.<C-w>e
-let g:ale_warn_about_trailing_whitespace = 0
+let g:ale_warn_about_trailing_whitespace = 1
 let g:ale_emit_conflict_warnings = 0
 let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
-let g:ale_disable_lsp = 1
+let g:ale_disable_lsp = 0
 let g:ale_echo_msg_error_str = 'L'
 let g:ale_echo_msg_warning_str = 'W'
 let g:ale_echo_msg_format = '[%linter%] %code: %%s [%severity%]'
@@ -14,7 +14,7 @@ let g:ale_sign_column_always = 1
 
 let g:ale_sign_warning = '='
 let g:ale_sign_error = '*'
-nmap <silent> <C-E> <Plug>(ale_next_wrap)
+nmap <C-E> <Plug>(ale_next_wrap)
 
 function! LinterStatus() abort
     let l:counts = ale#statusline#Count(bufnr(''))

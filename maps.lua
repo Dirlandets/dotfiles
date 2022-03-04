@@ -29,9 +29,6 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Press i to enter insert mode, and jk(kj) to exit insert mode.
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
-keymap("v", "jk", "<ESC>", opts)
-keymap("v", "kj", "<ESC>", opts)
 -- Press i to enter insert mode, and ii to exit insert mode.
 -- :vnoremap jk <Esc>
 -- :vnoremap kj <Esc>
-

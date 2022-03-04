@@ -92,7 +92,7 @@ require'nvim-tree'.setup {
       list = {}
     },
     number = false,
-    relativenumber = false,
+    relativenumber = true,
     signcolumn = "yes"
   },
   trash = {
