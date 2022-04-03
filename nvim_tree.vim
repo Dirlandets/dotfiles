@@ -46,7 +46,6 @@ require'nvim-tree'.setup {
   hijack_netrw        = true,
   open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = true,
   open_on_tab         = false,
   hijack_cursor       = false,
   update_cwd          = false,
@@ -84,24 +83,43 @@ require'nvim-tree'.setup {
   view = {
     width = 30,
     height = 30,
-    hide_root_folder = false,
-    side = 'left',
-    auto_resize = true,
-    mappings = {
-      custom_only = false,
-      list = {}
-    },
+    side = "left",
+    preserve_window_proportions = false,
     number = false,
     relativenumber = true,
-    signcolumn = "yes"
-  },
-  trash = {
+    signcolumn = "yes",
+    mappings = {
+      custom_only = false,
+      list = {
+        -- user mappings go here
+      },
+    },
+  },  trash = {
     cmd = "trash",
     require_confirm = true
-  }
+  },
+  actions = {
+    change_dir = {
+      enable = true,
+      global = false,
+    },
+    open_file = {
+      quit_on_open = false,
+      resize_window = true,
+      window_picker = {
+        enable = true,
+        chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890",
+        exclude = {
+          filetype = { "notify", "packer", "qf", "diff", "fugitive", "fugitiveblame" },
+          buftype = { "nofile", "terminal", "help" },
+        },
+      },
+    },
+  },
 }
 EOF
 
 nnoremap <space>t :NvimTreeToggle<CR>
 nnoremap <space>tr :NvimTreeRefresh<CR>
-
+" Autoclose
+autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif

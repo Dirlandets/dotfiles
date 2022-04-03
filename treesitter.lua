@@ -7,6 +7,18 @@ require'nvim-treesitter.configs'.setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
   },
+  ensure_installed = {
+    "tsx",
+    "toml",
+    "fish",
+    "json",
+    "yaml",
+    "html",
+    "scss",
+    "python",
+    "rust",
+    "go",
+  },
   incremental_selection = {
     enable = true,
     keymaps = {
@@ -17,3 +29,5 @@ require'nvim-treesitter.configs'.setup {
     },
   },
 }
+local parser_config = require "nvim-treesitter.parsers".get_parser_configs()
+parser_config.tsx.filetype_to_parsename = { "javascript", "typescript.tsx" }

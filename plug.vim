@@ -13,6 +13,9 @@ call plug#begin()
 
     " Completion plugins
     Plug 'neovim/nvim-lspconfig' 
+    Plug 'glepnir/lspsaga.nvim'
+    Plug 'williamboman/nvim-lsp-installer'
+
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'saadparwaiz1/cmp_luasnip'
