@@ -62,8 +62,9 @@ runtime ./comment.lua
 runtime ./treesitter.lua
 runtime ./feline.lua
 runtime ./gitsigns.lua
-runtime ./saga.lua
+" runtime ./saga.lua
 runtime ./lsp_installer.lua
+runtime ./ts_autotag.lua
 "}}}
 
 " Syntax theme "{{{
