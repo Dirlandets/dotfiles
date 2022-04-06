@@ -47,5 +47,6 @@ call plug#begin()
 
     " Toggle comments
     Plug 'numToStr/Comment.nvim'
-call plug#end()
 
+    Plug 'windwp/nvim-ts-autotag'
+call plug#end()
