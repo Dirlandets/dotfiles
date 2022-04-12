@@ -12,9 +12,9 @@ set splitright
 set splitbelow
 syntax enable
 
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 
 set expandtab
 set smarttab
@@ -65,6 +65,7 @@ runtime ./gitsigns.lua
 " runtime ./saga.lua
 runtime ./lsp_installer.lua
 runtime ./ts_autotag.lua
+runtime ./mkdp_config.vim
 "}}}
 
 " Syntax theme "{{{

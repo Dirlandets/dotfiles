@@ -44,3 +44,10 @@ vim.api.nvim_set_keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<C
 vim.api.nvim_set_keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
+
+vim.api.nvim_set_keymap('n', '<space>bb', ':Buffers<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>ww', ':Windows<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>bb', ':Buffers<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>ww', ':Windows<CR>', opts)
+
+
