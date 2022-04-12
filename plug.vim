@@ -49,4 +49,6 @@ call plug#begin()
     Plug 'numToStr/Comment.nvim'
 
     Plug 'windwp/nvim-ts-autotag'
+    " Markdown
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 call plug#end()
