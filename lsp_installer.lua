@@ -42,7 +42,7 @@ local diagnostics_opts = {
       eslint = {
         command = 'eslint_d',
         rootPatterns = { '.git' },
-        debounce = 100,
+        debounce = 200,
         args = { '--stdin', '--stdin-filename', '%filepath', '--format', 'json' },
         sourceName = 'eslint_d',
         parseJson = {
@@ -51,7 +51,7 @@ local diagnostics_opts = {
           column = 'column',
           endLine = 'endLine',
           endColumn = 'endColumn',
-          message = '[eslint] ${message} [${ruleId}]',
+          message = '[eslint] ${code} ${message} [${ruleId}]',
           security = 'severity'
         },
         securities = {
@@ -92,6 +92,16 @@ local diagnostics_opts = {
   }
 }
 
+python_opts = {
+  pyton = {
+    analysis = {
+      autoSearchPaths = true,
+      diagnosticMode = "workspace",
+      useLibraryCodeForTypes = true
+    }
+  }
+}
+
 lsp_installer.on_server_ready(function (server)
     local opts = {}
 
@@ -100,16 +110,39 @@ lsp_installer.on_server_ready(function (server)
             -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
             -- the resolved capabilities of the eslint server ourselves!
             client.resolved_capabilities.document_formatting = true
+            vim.api.nvim_command('augroup Format')
+            vim.api.nvim_command('autocmd! * <buffer>')
+            vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
+            vim.api.nvim_command('augroup END')
+
             common_on_attach(client, bufnr)
         end
         opts.settings = {
             format = { enable = true }, -- this will enable formatting
         }
+    elseif server.name == "tsserver" then
+        vim.api.nvim_command('autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
+        vim.api.nvim_command('autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
+        vim.api.nvim_command('autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
+        vim.api.nvim_command('autocmd BufWritePre *.js lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
+        opts.on_attach = function(client, bufnr)
+            common_on_attach(client, bufnr)
+        end
     elseif server.name == 'diagnosticls' then
         opts = diagnostics_opts
         opts.on_attach = function(client, bufnr)
             common_on_attach(client, bufnr)
             diagnostics_on_attach(client, bufnr)
+        end
+    elseif server.name == 'rust_analyzer' then
+        vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)')
+        opts.on_attach = function(client, bufnr)
+            common_on_attach(client, bufnr)
+        end
+    elseif server.name == 'pyright' then
+        opts = python_opts
+        opts.on_attach = function(client, bufnr)
+            common_on_attach(client, bufnr)
         end
     else
         opts.on_attach = common_on_attach
@@ -122,7 +155,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
     underline = true,
     -- This sets the spacing and the prefix, obviously.
     virtual_text = {
-      spacing = 4,
+      spacing = 3,
       prefix = ''
     }
   }
