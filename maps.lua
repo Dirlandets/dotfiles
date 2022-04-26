@@ -29,6 +29,11 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Press i to enter insert mode, and jk(kj) to exit insert mode.
 keymap("i", "jk", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
+
+-- Visual --
+-- Stay in ident mode
+keymap("v", "<", "<gv", opts)
+keymap("v", ">", ">gv", opts)
 -- Press i to enter insert mode, and ii to exit insert mode.
 -- :vnoremap jk <Esc>
 -- :vnoremap kj <Esc>
@@ -43,7 +48,6 @@ vim.api.nvim_set_keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<C
 vim.api.nvim_set_keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
-
 
 vim.api.nvim_set_keymap('n', '<space>bb', ':Buffers<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>ww', ':Windows<CR>', opts)
