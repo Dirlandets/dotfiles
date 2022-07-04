@@ -25,7 +25,7 @@ call plug#begin()
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
     Plug 'tanvirtin/monokai.nvim'
-    
+
     " Statusbar
     Plug 'feline-nvim/feline.nvim'
 
@@ -51,4 +51,6 @@ call plug#begin()
     Plug 'windwp/nvim-ts-autotag'
     " Markdown
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    " LSP Extensions
+    Plug 'nvim-lua/lsp_extensions.nvim'
 call plug#end()

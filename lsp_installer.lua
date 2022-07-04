@@ -138,6 +138,7 @@ lsp_installer.on_server_ready(function (server)
         vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)')
         opts.on_attach = function(client, bufnr)
             common_on_attach(client, bufnr)
+
         end
     elseif server.name == 'pyright' then
         opts = python_opts
