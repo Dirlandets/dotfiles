@@ -46,12 +46,10 @@ keymap("v", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
 vim.api.nvim_set_keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+vim.api.nvim_set_keymap('n', '<space>dl', '<cmd>lua vim.dianostic.setloclist()<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
 vim.api.nvim_set_keymap('n', '<space>bb', ':Buffers<CR>', opts)
 vim.api.nvim_set_keymap('n', '<space>ww', ':Windows<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>bb', ':Buffers<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>ww', ':Windows<CR>', opts)
-
-
+vim.api.nvim_set_keymap('v', '<space>bb', ':Buffers<CR>', opts)
+vim.api.nvim_set_keymap('v', '<space>ww', ':Windows<CR>', opts)
