@@ -11,7 +11,6 @@ lsp_installer.settings({
     }
 })
 
-
 function common_on_attach(client, bufnr)
   -- add your code here
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.dclaration()<CR>', opts)
