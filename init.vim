@@ -63,7 +63,7 @@ runtime ./treesitter.lua
 runtime ./gps.vim
 runtime ./feline.lua
 runtime ./gitsigns.lua
-" runtime ./saga.lua
+runtime ./saga.lua
 runtime ./lsp_installer.lua
 runtime ./ts_autotag.lua
 runtime ./mkdp_config.vim
