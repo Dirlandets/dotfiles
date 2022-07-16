@@ -7,6 +7,7 @@ call plug#begin()
     Plug 'mhinz/vim-startify'
     Plug 'dense-analysis/ale'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-lua/plenary.nvim'
 
     " Closes brackets automaticaly
     Plug 'cohama/lexima.vim'
@@ -25,7 +26,6 @@ call plug#begin()
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
     Plug 'tanvirtin/monokai.nvim'
-    
     " Statusbar
     Plug 'feline-nvim/feline.nvim'
 
@@ -33,16 +33,10 @@ call plug#begin()
     Plug 'kyazdani42/nvim-web-devicons' " for file icons
     Plug 'kyazdani42/nvim-tree.lua'
 
-    " Fzf
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-    Plug 'junegunn/fzf.vim'
-    Plug 'airblade/vim-rooter'
-
     " Bufferline
     Plug 'akinsho/bufferline.nvim'
 
     " GitSigns installation
-    Plug 'nvim-lua/plenary.nvim'
     Plug 'lewis6991/gitsigns.nvim'
 
     " Toggle comments
@@ -51,4 +45,11 @@ call plug#begin()
     Plug 'windwp/nvim-ts-autotag'
     " Markdown
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+    Plug 'SmiteshP/nvim-gps'
+    Plug 'nvim-orgmode/orgmode'
+
+    " Telescope
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+
 call plug#end()

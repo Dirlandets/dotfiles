@@ -35,7 +35,7 @@ syntax sync minlines=256
 
 set list
 set listchars=tab:>-,trail:⎵,nbsp:⎵
-:set timeoutlen=250
+:set timeoutlen=500
 
 " true color
 " termguicolor breaks the colors fix later
@@ -54,18 +54,20 @@ if has("unix")
   endif
 endif
 runtime ./maps.lua
-runtime ./fzf.vim
+runtime ./telescope.lua
 runtime ./nvim_tree.vim
 runtime ./bufferline.lua
 runtime ./ale.vim
 runtime ./comment.lua
 runtime ./treesitter.lua
+runtime ./gps.vim
 runtime ./feline.lua
 runtime ./gitsigns.lua
 " runtime ./saga.lua
 runtime ./lsp_installer.lua
 runtime ./ts_autotag.lua
 runtime ./mkdp_config.vim
+runtime ./orgmode.lua
 "}}}
 
 " Syntax theme "{{{
@@ -124,6 +126,7 @@ cmp.setup {
     { name = 'nvim_lsp' },
     { name = 'luasnip' },
     { name = 'path' },
+    { name = 'orgmode' },
   },
 }
 EOF

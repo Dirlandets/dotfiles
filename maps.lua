@@ -43,15 +43,23 @@ keymap("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", opts)
 keymap("n", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
 keymap("v", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
 
-vim.api.nvim_set_keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-vim.api.nvim_set_keymap('n', '<space>bb', ':Buffers<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>ww', ':Windows<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>bb', ':Buffers<CR>', opts)
-vim.api.nvim_set_keymap('n', '<space>ww', ':Windows<CR>', opts)
+keymap('n', '<space>bb', ':Buffers<CR>', opts)
+keymap('n', '<space>ww', ':Windows<CR>', opts)
+keymap('n', '<space>bb', ':Buffers<CR>', opts)
+keymap('n', '<space>ww', ':Windows<CR>', opts)
+
+keymap('n', '<space>]', ':BufferLineMoveNext<CR>', opts)
+keymap('n', '<space>[', ':BufferLineMovePrev<CR>', opts)
 
 
+-- TELESCOPE
+keymap('n', '<space>ff', '<cmd>Telescope find_files<cr>', opts)
+keymap('n', '<space>fg', '<cmd>Telescope live_grep<cr>', opts)
+keymap('n', '<space>fb', '<cmd>Telescope buffers<cr>', opts)
+keymap('n', '<space>fh', '<cmd>Telescope help_tags<cr>', opts)
