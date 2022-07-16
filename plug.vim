@@ -26,6 +26,7 @@ call plug#begin()
     Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
     Plug 'tanvirtin/monokai.nvim'
+
     " Statusbar
     Plug 'feline-nvim/feline.nvim'
 
@@ -52,4 +53,6 @@ call plug#begin()
     " Telescope
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
 
+    " LSP Extensions
+    Plug 'nvim-lua/lsp_extensions.nvim'
 call plug#end()
