@@ -38,8 +38,8 @@ keymap("v", ">", ">gv", opts)
 -- :vnoremap jk <Esc>
 -- :vnoremap kj <Esc>
 -- LSPSAGA
-keymap("n", "<leader>ca", ":Lspsaga code_action<CR>", opts)
-keymap("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", opts)
+keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
 keymap("n", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
 keymap("v", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
 
@@ -62,4 +62,5 @@ keymap('n', '<space>[', ':BufferLineMovePrev<CR>', opts)
 keymap('n', '<space>ff', '<cmd>Telescope find_files<cr>', opts)
 keymap('n', '<space>fg', '<cmd>Telescope live_grep<cr>', opts)
 keymap('n', '<space>fb', '<cmd>Telescope buffers<cr>', opts)
-keymap('n', '<space>fh', '<cmd>Telescope help_tags<cr>', opts)
+keymap('n', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
+keymap('v', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)

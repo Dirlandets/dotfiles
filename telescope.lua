@@ -27,3 +27,6 @@ require('telescope').setup{
     -- please take a look at the readme of the extension you want to configure
   }
 }
+
+require('neoclip').setup()
+require('telescope').load_extension 'neoclip'
