@@ -26,7 +26,6 @@ set clipboard+=unnamedplus
 
 set nobackup
 set backupskip=/tmp/*,/private/tmp/*
-
 filetype indent on      " load filetype-specific indent files
 
 set lazyredraw
@@ -68,6 +67,7 @@ runtime ./lsp_installer.lua
 runtime ./ts_autotag.lua
 runtime ./mkdp_config.vim
 runtime ./orgmode.lua
+runtime ./neoclip.lua
 "}}}
 
 " Syntax theme "{{{

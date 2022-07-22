@@ -57,7 +57,6 @@ keymap('n', '<space>ww', ':Windows<CR>', opts)
 keymap('n', '<space>]', ':BufferLineMoveNext<CR>', opts)
 keymap('n', '<space>[', ':BufferLineMovePrev<CR>', opts)
 
-
 -- TELESCOPE
 keymap('n', '<space>ff', '<cmd>Telescope find_files<cr>', opts)
 keymap('n', '<space>fg', '<cmd>Telescope live_grep<cr>', opts)

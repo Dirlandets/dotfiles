@@ -52,6 +52,7 @@ call plug#begin()
 
     " Telescope
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+    Plug 'AckslD/nvim-neoclip.lua'
 
     " Telescope Neoclip
     Plug 'AckslD/nvim-neoclip.lua'
