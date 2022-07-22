@@ -119,9 +119,15 @@ require'nvim-tree'.setup {
     },
   },
 }
+vim.api.nvim_create_autocmd("BufEnter", {
+  nested = true,
+  callback = function()
+    if #vim.api.nvim_list_wins() == 1 and vim.api.nvim_buf_get_name(0):match("NvimTree_") ~= nil then
+      vim.cmd "quit"
+    end
+  end
+})
 EOF
 
 nnoremap <space>t :NvimTreeToggle<CR>
 nnoremap <space>tr :NvimTreeRefresh<CR>
-" Autoclose
-autocmd BufEnter * ++nested if winnr('$') == 1 && bufname() == 'NvimTree_' . tabpagenr() | quit | endif
