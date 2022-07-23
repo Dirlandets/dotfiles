@@ -62,21 +62,24 @@ runtime ./treesitter.lua
 runtime ./gps.vim
 runtime ./feline.lua
 runtime ./gitsigns.lua
-runtime ./saga.lua
 runtime ./lsp_installer.lua
 runtime ./ts_autotag.lua
 runtime ./mkdp_config.vim
 runtime ./orgmode.lua
 runtime ./neoclip.lua
+runtime ./lsp_lines.lua
 "}}}
 
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
-" colorscheme dracula
 " colorscheme monokai
 " colorscheme monokai_pro
-colorscheme monokai_soda
+" colorscheme monokai_soda
 " colorscheme monokai_ristretto
+" tokionight
+let g:tokyonight_style = "night"
+let g:tokyonight_transparent = 0
+colorscheme tokyonight
 "}}}
 
  lua << EOF

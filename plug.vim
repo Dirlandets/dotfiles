@@ -23,9 +23,9 @@ call plug#begin()
     Plug 'L3MON4D3/LuaSnip'
 
     " Color schemas
-    Plug 'dracula/vim', { 'as': 'dracula' }
     Plug 'kaicataldo/material.vim', { 'branch': 'main' }
     Plug 'tanvirtin/monokai.nvim'
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
     " Statusbar
     Plug 'feline-nvim/feline.nvim'
