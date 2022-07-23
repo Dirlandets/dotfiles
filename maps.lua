@@ -63,3 +63,6 @@ keymap('n', '<space>fg', '<cmd>Telescope live_grep<cr>', opts)
 keymap('n', '<space>fb', '<cmd>Telescope buffers<cr>', opts)
 keymap('n', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
 keymap('v', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
+
+-- LSP LINES
+keymap('n', "<space>ll", '<cmd>lua require("lsp_lines").toggle()<CR>', opts)

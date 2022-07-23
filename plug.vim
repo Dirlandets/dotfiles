@@ -59,4 +59,7 @@ call plug#begin()
 
     " LSP Extensions
     Plug 'nvim-lua/lsp_extensions.nvim'
+
+    " LSP Lines
+    Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
 call plug#end()
