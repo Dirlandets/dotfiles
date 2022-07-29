@@ -5,7 +5,7 @@ endif
 call plug#begin()
 
     Plug 'mhinz/vim-startify'
-    Plug 'dense-analysis/ale'
+    " Plug 'dense-analysis/ale'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-lua/plenary.nvim'
 
@@ -62,4 +62,7 @@ call plug#begin()
 
     " LSP Lines
     Plug 'https://git.sr.ht/~whynothugo/lsp_lines.nvim'
+
+    " LSP null-lsp
+    Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim'
 call plug#end()
