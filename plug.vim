@@ -12,8 +12,11 @@ call plug#begin()
     " Closes brackets automaticaly
     Plug 'cohama/lexima.vim'
 
+    " Helper for better buffers expirience
+    Plug 'moll/vim-bbye'
+
     " Completion plugins
-    Plug 'neovim/nvim-lspconfig' 
+    Plug 'neovim/nvim-lspconfig'
     Plug 'glepnir/lspsaga.nvim'
     Plug 'williamboman/nvim-lsp-installer'
 
@@ -47,14 +50,10 @@ call plug#begin()
     " Markdown
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-    Plug 'SmiteshP/nvim-gps'
     Plug 'nvim-orgmode/orgmode'
 
     " Telescope
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
-    Plug 'AckslD/nvim-neoclip.lua'
-
-    " Telescope Neoclip
     Plug 'AckslD/nvim-neoclip.lua'
 
     " LSP Extensions
@@ -65,4 +64,8 @@ call plug#begin()
 
     " LSP null-lsp
     Plug 'https://github.com/jose-elias-alvarez/null-ls.nvim'
+
+    " LSP statusline/winbar component that uses LSP
+    Plug 'SmiteshP/nvim-navic'
+
 call plug#end()

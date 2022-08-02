@@ -7,9 +7,9 @@ local keymap = vim.api.nvim_set_keymap
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
 -- Close buffer
-keymap("n", "gw", "<cmd>bdelete<CR>", opts)
-keymap("i", "gw", "<cmd>bdelete<CR>", opts)
-keymap("v", "gw", "<cmd>bdelete<CR>", opts)
+keymap("n", "gw", "<cmd>Bdelete<CR>", opts)
+keymap("i", "gw", "<cmd>Bdelete<CR>", opts)
+keymap("v", "gw", "<cmd>Bdelete<CR>", opts)
 
 
 -- line or visually selected block - alt+j/k

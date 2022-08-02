@@ -67,6 +67,7 @@ runtime ./mkdp_config.vim
 runtime ./orgmode.lua
 runtime ./neoclip.lua
 runtime ./lsp_lines.lua
+runtime ./navic.lua
 "}}}
 
 " colorscheme monokai

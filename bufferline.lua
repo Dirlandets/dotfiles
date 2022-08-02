@@ -28,17 +28,18 @@ require('bufferline').setup {
     max_name_length = 30,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 25,
-    diagnostics = 'nvim_lsp',
-    diagnostics_update_in_insert = true,
-    diagnostics_indicator = function(count, level, diagnostics_dict, context)
-      local s = " "
-      for e, n in pairs(diagnostics_dict) do
-        local sym = e == "error" and " "
-          or (e == "warning" and " " or "i " )
-        s = s .. n .. sym
-      end
-      return s
-    end,
+    -- If you want LSP info in buffs
+    -- diagnostics = 'nvim_lsp',
+    -- diagnostics_update_in_insert = true,
+    -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
+    --   local s = " "
+    --   for e, n in pairs(diagnostics_dict) do
+    --     local sym = e == "error" and " "
+    --       or (e == "warning" and " " or "i " )
+    --     s = s .. n .. sym
+    --   end
+    --   return s
+    -- end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
     custom_filter = function(buf_number, buf_numbers)
       -- filter out filetypes you don't want to see
