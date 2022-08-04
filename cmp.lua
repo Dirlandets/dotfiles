@@ -1,8 +1,9 @@
 -- luasnip setup
 local luasnip = require 'luasnip'
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+local cmp = require('cmp')
 
 -- nvim-cmp setup
-local cmp = require 'cmp'
 cmp.setup {
   snippet = {
     expand = function(args)
@@ -40,10 +41,14 @@ cmp.setup {
     end,
   },
   sources = {
-    { name = 'buffer' },
-    { name = 'nvim_lsp' },
     { name = 'luasnip' },
+    { name = 'nvim_lsp' },
+    { name = 'buffer' },
     { name = 'path' },
     { name = 'orgmode' },
   },
 }
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)

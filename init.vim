@@ -4,7 +4,7 @@ set number
 set noswapfile
 set scrolloff=7
 set title
-set autoindent
+" set autoindent
 set background=dark
 set ignorecase
 
@@ -67,6 +67,7 @@ runtime ./mkdp_config.vim
 runtime ./orgmode.lua
 runtime ./neoclip.lua
 runtime ./lsp_lines.lua
+runtime ./nvim-autopairs.lua
 "}}}
 
 " colorscheme monokai
