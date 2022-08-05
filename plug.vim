@@ -10,7 +10,8 @@ call plug#begin()
     Plug 'nvim-lua/plenary.nvim'
 
     " Closes brackets automaticaly
-    Plug 'cohama/lexima.vim'
+    " Plug 'cohama/lexima.vim'
+    Plug 'windwp/nvim-autopairs'
 
     " Helper for better buffers expirience
     Plug 'moll/vim-bbye'
