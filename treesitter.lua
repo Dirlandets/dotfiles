@@ -10,14 +10,17 @@ require'nvim-treesitter.configs'.setup {
   ensure_installed = {
     "tsx",
     "toml",
-    "fish",
-    "json",
     "yaml",
     "html",
     "scss",
     "python",
     "rust",
     "go",
+  },
+  rainbow = {
+    enable = true,
+    extended_mode = true,
+    max_file_lines = nil,
   },
   incremental_selection = {
     enable = true,
