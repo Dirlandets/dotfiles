@@ -6,12 +6,10 @@ call plug#begin()
 
     Plug 'lewis6991/impatient.nvim'
     Plug 'mhinz/vim-startify'
-    " Plug 'dense-analysis/ale'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
     Plug 'nvim-lua/plenary.nvim'
 
     " Closes brackets automaticaly
-    " Plug 'cohama/lexima.vim'
     Plug 'windwp/nvim-autopairs'
 
     " Helper for better buffers expirience
@@ -28,8 +26,8 @@ call plug#begin()
     Plug 'L3MON4D3/LuaSnip'
 
     " Color schemas
-    Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-    Plug 'tanvirtin/monokai.nvim'
+    " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
+    " Plug 'tanvirtin/monokai.nvim'
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
     " Statusbar
@@ -72,6 +70,4 @@ call plug#begin()
 
     " All warnings and violation in one window
     Plug 'folke/trouble.nvim'
-
-
 call plug#end()
