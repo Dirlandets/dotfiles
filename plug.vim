@@ -69,4 +69,6 @@ call plug#begin()
     " LSP statusline/winbar component that uses LSP
     Plug 'SmiteshP/nvim-navic'
 
+    " All warnings and violation in one window
+    Plug 'folke/trouble.nvim'
 call plug#end()

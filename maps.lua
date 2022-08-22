@@ -71,3 +71,11 @@ keymap('v', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
 
 -- LSP LINES
 keymap('n', "<space>ll", '<cmd>lua require("lsp_lines").toggle()<CR>', opts)
+
+-- Truuble
+keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
+keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
+keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
+keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
+keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
+keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)

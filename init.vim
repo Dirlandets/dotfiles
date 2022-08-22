@@ -69,6 +69,7 @@ runtime ./neoclip.lua
 runtime ./lsp_lines.lua
 runtime ./navic.lua
 runtime ./nvim-autopairs.lua
+runtime ./trouble.lua
 "}}}
 
 " colorscheme monokai
