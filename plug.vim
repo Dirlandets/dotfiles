@@ -4,6 +4,7 @@ endif
 
 call plug#begin()
 
+    Plug 'lewis6991/impatient.nvim'
     Plug 'mhinz/vim-startify'
     " Plug 'dense-analysis/ale'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -71,4 +72,6 @@ call plug#begin()
 
     " All warnings and violation in one window
     Plug 'folke/trouble.nvim'
+
+
 call plug#end()

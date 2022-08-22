@@ -43,6 +43,7 @@ if (has('termguicolors'))
 endif
 
 runtime ./plug.vim
+lua require('impatient')
 if has("unix")
   let s:uname = system("uname -s")
   " Do Mac stuff
