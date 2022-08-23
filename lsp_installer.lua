@@ -131,12 +131,6 @@ lsp_installer.on_server_ready(function (server)
         opts.on_attach = function(client, bufnr)
             common_on_attach(client, bufnr)
         end
-    -- elseif server.name == 'diagnosticls' then
-    --     opts = diagnostics_opts
-    --     opts.on_attach = function(client, bufnr)
-    --         common_on_attach(client, bufnr)
-    --         diagnostics_on_attach(client, bufnr)
-    --     end
     elseif server.name == 'rust_analyzer' then
         vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)')
         opts.on_attach = function(client, bufnr)
@@ -153,14 +147,3 @@ lsp_installer.on_server_ready(function (server)
     end
     server:setup(opts)
 end)
-
--- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
---   vim.lsp.diagnostic.on_publish_diagnostics, {
---     underline = true,
---     -- This sets the spacing and the prefix, obviously.
---     virtual_text = {
---       spacing = 3,
---       prefix = ''
---     }
---   }
--- )
