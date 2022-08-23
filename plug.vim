@@ -70,4 +70,7 @@ call plug#begin()
 
     " All warnings and violation in one window
     Plug 'folke/trouble.nvim'
+
+    Plug 'phaazon/mind.nvim'
+    Plug 's1n7ax/nvim-window-picker'
 call plug#end()
