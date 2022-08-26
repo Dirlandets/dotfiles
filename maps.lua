@@ -43,12 +43,12 @@ keymap("v", ">", ">gv", opts)
 -- :vnoremap jk <Esc>
 -- :vnoremap kj <Esc>
 -- LSPSAGA
-keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
-keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
-keymap("n", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
-keymap("v", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
+-- keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+-- keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+-- keymap("n", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
+-- keymap("v", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
 
-keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+-- keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
@@ -79,3 +79,42 @@ keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
 keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
 keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
 keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
+
+
+-- LSP SAGA
+-- use <C-t> to jump back
+keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+
+keymap("n", "<space>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
+
+-- Code action
+keymap("n", "<space>ca", "<cmd>Lspsaga code_action<CR>", opts)
+keymap("v", "<space>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+
+-- Rename
+keymap("n", "<F2>", "<cmd>Lspsaga rename<CR>", opts)
+
+-- Definition preview
+keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
+
+-- Show line diagnostics
+keymap("n", "<space>de", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+
+
+-- Diagnsotic jump can use `<c-o>` to jump back
+keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
+keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
+
+-- Only jump to error
+-- keymap("n", "[E", function()
+--   require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+-- end, { silent = true })
+-- keymap("n", "]E", function()
+--   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+-- end, { silent = true })
+
+-- Outline
+keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
+
+-- Hover Doc
+keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
