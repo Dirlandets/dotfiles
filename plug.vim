@@ -74,6 +74,9 @@ call plug#begin()
     Plug 'phaazon/mind.nvim'
     Plug 's1n7ax/nvim-window-picker'
 
+    Plug 'easymotion/vim-easymotion'
+
+
 
     " Install Later
     " Plug 'fgheng/winbar.nvim'

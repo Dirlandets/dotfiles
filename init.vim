@@ -58,7 +58,6 @@ runtime ./nvim_tree.vim
 runtime ./bufferline.lua
 runtime ./comment.lua
 runtime ./treesitter.lua
-runtime ./gps.vim
 runtime ./feline.lua
 runtime ./gitsigns.lua
 runtime ./null-ls.lua
