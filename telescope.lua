@@ -4,15 +4,15 @@ require('telescope').setup{
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
-    mappings = {
-      i = {
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        i = { ["<c-t>"] = trouble.open_with_trouble },
-        n = { ["<c-t>"] = trouble.open_with_trouble },
-      }
-    }
+    -- mappings = {
+    --   i = {
+    --     -- map actions.which_key to <C-h> (default: <C-/>)
+    --     -- actions.which_key shows the mappings for your picker,
+    --     -- e.g. git_{create, delete, ...}_branch for the git_branches picker
+    --     i = { ["<c-t>"] = trouble.open_with_trouble },
+    --     n = { ["<c-t>"] = trouble.open_with_trouble },
+    --   }
+    -- }
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:

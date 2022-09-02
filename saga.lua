@@ -63,13 +63,13 @@ require('lspsaga').init_lsp_saga({
   rename_in_select = true,
   definition_preview_icon = "  ",
   -- show symbols in winbar must nightly
-  symbol_in_winbar = {
-      in_custom = true,
-      enable = false,
-      separator = ' ',
-      show_file = false,
-      click_support = true,
-  },
+  -- symbol_in_winbar = {
+  --     in_custom = true,
+  --     enable = false,
+  --     separator = ' ',
+  --     show_file = false,
+  --     click_support = true,
+  -- },
   -- show outline
   show_outline = {
     win_position = 'right',
