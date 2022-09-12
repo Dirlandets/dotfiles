@@ -72,6 +72,7 @@ runtime ./nvim-autopairs.lua
 runtime ./trouble.lua
 runtime ./mind.lua
 runtime ./saga.lua
+runtime ./hop.lua
 "}}}
 
 " colorscheme monokai

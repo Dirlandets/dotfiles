@@ -74,7 +74,8 @@ call plug#begin()
     Plug 'phaazon/mind.nvim'
     Plug 's1n7ax/nvim-window-picker'
 
-    Plug 'easymotion/vim-easymotion'
+    " Plug 'easymotion/vim-easymotion'
+    Plug 'phaazon/hop.nvim'
 
 
 
