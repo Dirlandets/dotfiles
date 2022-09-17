@@ -137,3 +137,6 @@ keymap('', 'TT',
   , opts)
 keymap('', '<space><space>', "<cmd>lua require'hop'.hint_char2({})<cr>", opts)
 keymap('', '<space>l', "<cmd>HopLineStart<cr>", opts)
+
+-- NvimTree
+keymap('n', '<space>tt', '<cmd>NvimTreeToggle<CR>', opts)
