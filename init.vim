@@ -60,7 +60,7 @@ runtime ./comment.lua
 runtime ./treesitter.lua
 runtime ./feline.lua
 runtime ./gitsigns.lua
-runtime ./null-ls.lua
+runtime ./null_ls.lua
 runtime ./lsp_installer.lua
 runtime ./ts_autotag.lua
 runtime ./mkdp_config.vim
