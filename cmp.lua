@@ -41,11 +41,10 @@ cmp.setup {
     end,
   },
   sources = {
+    { name = 'path' },
     { name = 'luasnip' },
     { name = 'nvim_lsp' },
     { name = 'buffer' },
-    { name = 'path' },
-    { name = 'orgmode' },
   },
 }
 cmp.event:on(
