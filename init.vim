@@ -54,7 +54,7 @@ endif
 runtime ./maps.lua
 runtime ./telescope.lua
 runtime ./cmp.lua
-runtime ./nvim_tree.vim
+runtime ./nvim_tree.lua
 runtime ./bufferline.lua
 runtime ./comment.lua
 runtime ./treesitter.lua
@@ -63,7 +63,7 @@ runtime ./gitsigns.lua
 runtime ./null_ls.lua
 runtime ./lsp_installer.lua
 runtime ./ts_autotag.lua
-runtime ./mkdp_config.vim
+runtime ./mkdp.vim
 runtime ./orgmode.lua
 runtime ./neoclip.lua
 runtime ./lsp_lines.lua
