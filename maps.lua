@@ -1,4 +1,4 @@
-local opts = { noremap=true, silent=false}
+local opts = { noremap = true, silent = false }
 -- Shorten nvim_set_keymap name
 local keymap = vim.api.nvim_set_keymap
 
@@ -80,12 +80,9 @@ keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
 keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
 keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 
-
 -- LSP SAGA
 -- use <C-t> to jump back
 keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
-
-keymap("n", "<space>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
 
 -- Code action
 keymap("n", "<space>ca", "<cmd>Lspsaga code_action<CR>", opts)
@@ -114,17 +111,29 @@ keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 -- end, { silent = true })
 
 -- Outline
-keymap("n","<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
+keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
 
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 
 -- Hop
-keymap('', 'f', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>", opts)
-keymap('', 'ff', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>", opts)
-keymap('', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>", opts)
-keymap('', 'FF', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>", opts)
-keymap('', 'tt', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false, hint_offset = -1 })<cr>", opts)
-keymap('', 'TT', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>", opts)
+keymap('', 'f',
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+  , opts)
+keymap('', 'ff',
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>"
+  , opts)
+keymap('', 'F',
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+  , opts)
+keymap('', 'FF',
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>"
+  , opts)
+keymap('', 'tt',
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false, hint_offset = -1 })<cr>"
+  , opts)
+keymap('', 'TT',
+  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>"
+  , opts)
 keymap('', '<space><space>', "<cmd>lua require'hop'.hint_char2({})<cr>", opts)
 keymap('', '<space>l', "<cmd>HopLineStart<cr>", opts)
