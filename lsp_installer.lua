@@ -33,7 +33,7 @@ end
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
-local diagnostics_on_attach = function(client, bufnr)
+local diagnostics_on_attach = function(_, bufnr)
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 end
@@ -107,8 +107,8 @@ python_opts = {
 }
 lsp_installer.on_server_ready(function(server)
   local opts = {}
-
-  if server.name == "eslint" then
+  local sn = server.name
+  if sn == "eslint" then
     opts.on_attach = function(client, bufnr)
       -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
       -- the resolved capabilities of the eslint server ourselves!
@@ -125,7 +125,7 @@ lsp_installer.on_server_ready(function(server)
     opts.settings = {
       format = { enable = true }, -- this will enable formatting
     }
-  elseif server.name == "tsserver" then
+  elseif sn == "tsserver" then
     vim.api.nvim_command('autocmd BufWritePre *.tsx lua vim.lsp.buf.format(nil, 100)')
     vim.api.nvim_command('autocmd BufWritePre *.jsx lua vim.lsp.buf.format(nil, 100)')
     vim.api.nvim_command('autocmd BufWritePre *.ts lua vim.lsp.buf.format(nil, 100)')
@@ -133,14 +133,18 @@ lsp_installer.on_server_ready(function(server)
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
     end
-  elseif server.name == 'rust_analyzer' then
+  elseif sn == 'rust_analyzer' then
     vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
     end
-  elseif server.name == 'pyright' then
-    -- opts = python_opts
-    opts = {}
+  elseif sn == 'pyright' then
+    opts = python_opts
+    opts.on_attach = function(client, bufnr)
+      common_on_attach(client, bufnr)
+    end
+  elseif sn == 'sumneko_lua' then
+    vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
     end
