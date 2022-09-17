@@ -52,7 +52,7 @@ keymap("v", ">", ">gv", opts)
 keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.format {async = true}<CR>', opts)
 
 keymap('n', '<space>bb', ':Buffers<CR>', opts)
 keymap('n', '<space>ww', ':Windows<CR>', opts)

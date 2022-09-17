@@ -15,7 +15,7 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 
-function common_on_attach(_, bufnr)
+function common_on_attach(client, bufnr)
   ----  add your code here
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.dclaration()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -105,7 +105,6 @@ python_opts = {
     }
   }
 }
-
 lsp_installer.on_server_ready(function(server)
   local opts = {}
 
@@ -113,10 +112,12 @@ lsp_installer.on_server_ready(function(server)
     opts.on_attach = function(client, bufnr)
       -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
       -- the resolved capabilities of the eslint server ourselves!
-      client.resolved_capabilities.document_formatting = true
+      client.resolved_capabilities = {
+        document_formating = true,
+      }
       vim.api.nvim_command('augroup Format')
       vim.api.nvim_command('autocmd! * <buffer>')
-      vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
+      vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.format(nil, 200)')
       vim.api.nvim_command('augroup END')
 
       common_on_attach(client, bufnr)
@@ -125,21 +126,21 @@ lsp_installer.on_server_ready(function(server)
       format = { enable = true }, -- this will enable formatting
     }
   elseif server.name == "tsserver" then
-    vim.api.nvim_command('autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
-    vim.api.nvim_command('autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
-    vim.api.nvim_command('autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
-    vim.api.nvim_command('autocmd BufWritePre *.js lua vim.lsp.buf.formatting_seq_sync(nil, 200)')
+    vim.api.nvim_command('autocmd BufWritePre *.tsx lua vim.lsp.buf.format(nil, 100)')
+    vim.api.nvim_command('autocmd BufWritePre *.jsx lua vim.lsp.buf.format(nil, 100)')
+    vim.api.nvim_command('autocmd BufWritePre *.ts lua vim.lsp.buf.format(nil, 100)')
+    vim.api.nvim_command('autocmd BufWritePre *.js lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
     end
   elseif server.name == 'rust_analyzer' then
-    vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)')
+    vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
-
     end
   elseif server.name == 'pyright' then
-    opts = python_opts
+    -- opts = python_opts
+    opts = {}
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
     end
