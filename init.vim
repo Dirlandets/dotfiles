@@ -34,7 +34,7 @@ syntax sync minlines=256
 
 set list
 set listchars=tab:>-,trail:⎵,nbsp:⎵
-:set timeoutlen=500
+:set timeoutlen=300
 
 " true color
 " termguicolor breaks the colors fix later
