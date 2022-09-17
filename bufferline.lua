@@ -2,16 +2,16 @@ require('bufferline').setup {
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
     --- @deprecated, please specify numbers as a function to customize the styling
-    close_command = "bdelete! %d",       -- can be a string | function, see "Mouse actions"
+    close_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
     right_mouse_command = "bdelete! %d", -- can be a string | function, see "Mouse actions"
-    left_mouse_command = "buffer %d",    -- can be a string | function, see "Mouse actions"
-    middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
+    left_mouse_command = "buffer %d", -- can be a string | function, see "Mouse actions"
+    middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
     indicator = {
-        icon = '▎', -- this should be omitted if indicator style is not 'icon'
-        style = 'icon',
+      icon = '▎', -- this should be omitted if indicator style is not 'icon'
+      style = 'icon',
     },
     buffer_close_icon = '',
     modified_icon = '●',
@@ -22,7 +22,7 @@ require('bufferline').setup {
     --- Please note some names can/will break the
     --- bufferline so use this at your discretion knowing that it has
     --- some limitations that will *NOT* be fixed.
-    name_formatter = function(buf)  -- buf contains a "name", "path" and "bufnr"
+    name_formatter = function(buf) -- buf contains a "name", "path" and "bufnr"
       -- remove extension from markdown files for example
       if buf.name:match('%.md') then
         return vim.fn.fnamemodify(buf.name, ':t:r')
@@ -85,4 +85,3 @@ require('bufferline').setup {
     always_show_bufferline = true,
   }
 }
-
