@@ -1,8 +1,9 @@
-NullLs = require("null-ls")
-NullLs.sources = {
-  NullLs.builtins.diagnostics.mypy,
-  NullLs.builtins.diagnostics.flake8,
-  NullLs.builtins.diagnostics.eslint_d,
-  NullLs.builtins.diagnostics.hadolint,
+require("null-ls").setup {
+  diagnostics_format = "#{s}: [#{c}] #{m}",
+  source = {
+    require("null-ls").builtins.diagnostics.mypy,
+    require("null-ls").builtins.diagnostics.flake8,
+    require("null-ls").builtins.diagnostics.eslint_d,
+    require("null-ls").builtins.diagnostics.hadolint,
+  }
 }
-NullLs.diagnostics_format = "#{s}: [#{c}] #{m}"

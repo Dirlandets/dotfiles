@@ -15,7 +15,7 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 
-function common_on_attach(client, bufnr)
+function common_on_attach(_, bufnr)
   ----  add your code here
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.dclaration()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -90,13 +90,12 @@ local diagnostics_opts = {
       less = 'prettier',
       typescript = 'eslint_d',
       typescriptreact = 'eslint_d',
-      json = 'prettier',
       markdown = 'prettier',
     }
   }
 }
 
-python_opts = {
+local python_opts = {
   pyton = {
     analysis = {
       autoSearchPaths = true,
@@ -105,6 +104,7 @@ python_opts = {
     }
   }
 }
+
 lsp_installer.on_server_ready(function(server)
   local opts = {}
   local sn = server.name
