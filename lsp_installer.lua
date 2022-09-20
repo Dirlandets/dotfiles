@@ -15,7 +15,8 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 
-function common_on_attach(_, bufnr)
+local navic = require("nvim-navic")
+function common_on_attach(client, bufnr)
   ----  add your code here
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.dclaration()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -29,6 +30,7 @@ function common_on_attach(_, bufnr)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+  navic.attach(client, bufnr)
 end
 
 -- Use an on_attach function to only map the following keys
