@@ -15,7 +15,8 @@ vim.diagnostic.config({
   virtual_text = false,
 })
 
-function common_on_attach(_, bufnr)
+local navic = require("nvim-navic")
+function common_on_attach(client, bufnr)
   ----  add your code here
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
 end
