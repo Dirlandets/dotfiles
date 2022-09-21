@@ -122,21 +122,25 @@ lsp_installer.on_server_ready(function(server)
     vim.api.nvim_command('autocmd BufWritePre *.js lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
+      navic.attach(client, bufnr)
     end
   elseif sn == 'rust_analyzer' then
     vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
+      navic.attach(client, bufnr)
     end
   elseif sn == 'pyright' then
     opts = python_opts
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
+      navic.attach(client, bufnr)
     end
   elseif sn == 'sumneko_lua' then
     vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
+      navic.attach(client, bufnr)
     end
   else
     opts.on_attach = common_on_attach
