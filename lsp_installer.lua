@@ -18,19 +18,7 @@ vim.diagnostic.config({
 local navic = require("nvim-navic")
 function common_on_attach(client, bufnr)
   ----  add your code here
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.dclaration()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  -- vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  navic.attach(client, bufnr)
 end
 
 -- Use an on_attach function to only map the following keys
@@ -134,21 +122,25 @@ lsp_installer.on_server_ready(function(server)
     vim.api.nvim_command('autocmd BufWritePre *.js lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
+      navic.attach(client, bufnr)
     end
   elseif sn == 'rust_analyzer' then
     vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
+      navic.attach(client, bufnr)
     end
   elseif sn == 'pyright' then
     opts = python_opts
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
+      navic.attach(client, bufnr)
     end
   elseif sn == 'sumneko_lua' then
     vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
     opts.on_attach = function(client, bufnr)
       common_on_attach(client, bufnr)
+      navic.attach(client, bufnr)
     end
   else
     opts.on_attach = common_on_attach

@@ -1,5 +1,3 @@
-set mouse=a  " enable mouse
-set encoding=utf-8
 set number
 set noswapfile
 set scrolloff=7
@@ -51,6 +49,7 @@ if has("unix")
     runtime ./macos.vim
   endif
 endif
+runtime ./tokionight.lua
 runtime ./maps.lua
 runtime ./nvim_tree.lua
 runtime ./treesitter.lua
@@ -79,7 +78,4 @@ runtime ./hop.lua
 " colorscheme monokai_pro
 " colorscheme monokai_soda
 " colorscheme monokai_ristretto
-" tokionight
-let g:tokyonight_style = "night"
-let g:tokyonight_transparent = 0
 colorscheme tokyonight
