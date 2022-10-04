@@ -1,9 +1,9 @@
 require('bufferline').setup {
-  highlights = {
-    buffer_selected = {
-      bg = '#2d3b52'
-    }
-  },
+  -- highlights = {
+  --   buffer_selected = {
+  --     bg = '#2d3b52'
+  --   }
+  -- },
   options = {
     numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
     --- @deprecated, please specify numbers as a function to customize the styling
