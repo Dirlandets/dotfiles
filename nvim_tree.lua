@@ -110,7 +110,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
+    enable = true,
     update_root = false,
     ignore_list = {},
   },
@@ -120,8 +120,8 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     args = {},
   },
   diagnostics = {
-    enable = false,
-    show_on_dirs = false,
+    enable = true,
+    show_on_dirs = true,
     debounce_delay = 50,
     icons = {
       hint = "",
