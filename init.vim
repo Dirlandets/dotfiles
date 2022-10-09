@@ -56,21 +56,26 @@ runtime ./treesitter.lua
 runtime ./bufferline.lua
 runtime ./navic.lua
 runtime ./feline.lua
-runtime ./lsp_installer.lua
+
+" LSP stuff
+runtime ./lsp/lsp_installer.lua
+runtime ./lsp/init.lua
+runtime ./lsp/null_ls.lua
+runtime ./lsp/lsp_lines.lua
+runtime ./lsp/saga.lua
+runtime ./lsp/neoclip.lua
+
 runtime ./telescope.lua
 runtime ./cmp.lua
 runtime ./comment.lua
 runtime ./gitsigns.lua
-runtime ./null_ls.lua
 runtime ./ts_autotag.lua
 runtime ./mkdp.vim
 runtime ./orgmode.lua
 runtime ./neoclip.lua
-runtime ./lsp_lines.lua
 runtime ./nvim-autopairs.lua
 runtime ./trouble.lua
 runtime ./mind.lua
-runtime ./saga.lua
 runtime ./hop.lua
 "}}}
 
