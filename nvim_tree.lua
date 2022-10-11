@@ -6,9 +6,10 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
   ignore_buffer_on_setup = false,
-  open_on_setup = false,
+  open_on_setup = true,
   open_on_setup_file = false,
   open_on_tab = false,
+  focus_empty_on_setup = false,
   ignore_buf_on_tab_change = {},
   sort_by = "name",
   root_dirs = {},
@@ -16,8 +17,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   sync_root_with_cwd = false,
   reload_on_bufenter = false,
   respect_buf_cwd = false,
-  on_attach = "disable", -- function(bufnr). If nil, will use the deprecated mapping strategy
-  remove_keymaps = false, -- boolean (disable totally or not) or list of key (lhs)
+  on_attach = "disable",
+  remove_keymaps = false,
+  select_prompts = false,
   view = {
     adaptive_size = false,
     centralize_selection = false,
@@ -28,7 +30,6 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    -- @deprecated
     mappings = {
       custom_only = false,
       list = {
@@ -120,8 +121,8 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     args = {},
   },
   diagnostics = {
-    enable = true,
-    show_on_dirs = true,
+    enable = false,
+    show_on_dirs = false,
     debounce_delay = 50,
     icons = {
       hint = "",
@@ -204,7 +205,6 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     },
   },
 }
-
 vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
   callback = function()

@@ -1,3 +1,7 @@
+lua << EOF
+  vim.g.loaded = 1
+  vim.g.loaded_netrwPlugin = 1
+EOF
 set number
 set noswapfile
 set scrolloff=7
@@ -63,9 +67,9 @@ runtime ./lsp/init.lua
 runtime ./lsp/null_ls.lua
 runtime ./lsp/lsp_lines.lua
 runtime ./lsp/saga.lua
-runtime ./lsp/neoclip.lua
 
 runtime ./telescope.lua
+runtime ./neoclip.lua
 runtime ./cmp.lua
 runtime ./comment.lua
 runtime ./gitsigns.lua

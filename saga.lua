@@ -6,7 +6,7 @@ require('lspsaga').init_lsp_saga({
   --transparent background. Values between 0-30 are typically most useful.
   saga_winblend = 0,
   -- when cursor in saga window you config these to move
-  move_in_saga = { prev = '<C-p>',next = '<C-n>'},
+  move_in_saga = { prev = '<C-p>', next = '<C-n>' },
   -- Error, Warn, Info, Hint
   -- use emoji like
   -- { "🙀", "😿", "😾", "😺" }
@@ -21,16 +21,16 @@ require('lspsaga').init_lsp_saga({
   -- preview lines of lsp_finder and definition preview
   max_preview_lines = 10,
   -- use emoji lightbulb in default
-  code_action_icon = "💡",
+  code_action_icon = ".",
   -- if true can press number to execute the codeaction in codeaction window
   code_action_num_shortcut = true,
   -- same as nvim-lightbulb but async
   code_action_lightbulb = {
-      enable = true,
-      sign = true,
-      enable_in_insert = true,
-      sign_priority = 20,
-      virtual_text = false,
+    enable = true,
+    sign = true,
+    enable_in_insert = true,
+    sign_priority = 20,
+    virtual_text = false,
   },
   -- finder icons
   finder_icons = {
@@ -43,17 +43,17 @@ require('lspsaga').init_lsp_saga({
   -- you may need to increase this value
   finder_request_timeout = 1500,
   finder_action_keys = {
-      open = "o",
-      vsplit = "s",
-      split = "i",
-      tabe = "t",
-      quit = "q",
-      scroll_down = "<C-f>",
-      scroll_up = "<C-b>", -- quit can be a table
+    open = "o",
+    vsplit = "s",
+    split = "i",
+    tabe = "t",
+    quit = "q",
+    scroll_down = "<C-f>",
+    scroll_up = "<C-b>", -- quit can be a table
   },
   code_action_keys = {
-      quit = "q",
-      exec = "<CR>",
+    quit = "q",
+    exec = "<CR>",
   },
   rename_action_quit = "<C-c>",
   rename_in_select = true,
