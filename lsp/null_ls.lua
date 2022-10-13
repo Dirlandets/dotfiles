@@ -9,6 +9,7 @@ local sources = {
   null_ls.builtins.code_actions.eslint_d,
   -- Formatters
   null_ls.builtins.formatting.isort,
+  null_ls.builtins.formatting.rustfmt,
 }
 null_ls.setup({
   diagnostics_format = "#{s}: [#{c}] #{m}",

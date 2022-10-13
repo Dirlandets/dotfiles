@@ -1,8 +1,10 @@
 # My NVIM config
 
 
-## LSP-related stuff
+## LSP-related plugins
 - [nvim-LSP-installer](https://github.com/williamboman/nvim-lsp-installer) 
-- [LspSaga](https://github.com/glepnir/lspsaga.nvim)
-- [LSP-installer](https://github.com/williamboman/nvim-lsp-installer)
-- [LSP-installer](https://github.com/williamboman/nvim-lsp-installer)
+
+## LSP servers
+- [Rust Ananlyzer](https://rust-analyzer.github.io/)
+- [Pyright](https://github.com/microsoft/pyright)
+- [tsserver](https://github.com/Microsoft/TypeScript/wiki/Standalone-Server-%28tsserver%29)
