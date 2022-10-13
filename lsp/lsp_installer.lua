@@ -8,7 +8,3 @@ lsp_installer.settings({
     }
   }
 })
-
-vim.diagnostic.config({
-  virtual_text = false,
-})

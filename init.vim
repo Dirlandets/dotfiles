@@ -57,6 +57,7 @@ runtime ./tokionight.lua
 runtime ./maps.lua
 runtime ./nvim_tree.lua
 runtime ./treesitter.lua
+runtime ./diagnostics.lua
 runtime ./bufferline.lua
 runtime ./navic.lua
 runtime ./feline.lua
