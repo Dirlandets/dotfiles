@@ -80,6 +80,9 @@ call plug#begin()
     " Plug 'easymotion/vim-easymotion'
     Plug 'phaazon/hop.nvim'
 
+    " Switch bools
+    Plug 'nat-418/boole.nvim'
+
 
 
     " Install Later

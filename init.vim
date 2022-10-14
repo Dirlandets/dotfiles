@@ -59,11 +59,11 @@ runtime ./nvim_tree.lua
 runtime ./treesitter.lua
 runtime ./diagnostics.lua
 runtime ./bufferline.lua
-runtime ./navic.lua
 runtime ./feline.lua
 
 " LSP stuff
 runtime ./lsp/lsp_installer.lua
+runtime ./lsp/navic.lua
 runtime ./lsp/init.lua
 runtime ./lsp/null_ls.lua
 runtime ./lsp/lsp_lines.lua
@@ -82,6 +82,7 @@ runtime ./nvim-autopairs.lua
 runtime ./trouble.lua
 runtime ./mind.lua
 runtime ./hop.lua
+runtime ./bool.lua
 "}}}
 
 " colorscheme monokai
