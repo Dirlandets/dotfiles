@@ -97,21 +97,21 @@ nvim_lsp.tsserver.setup {
 }
 
 -- ESLINT (JS, TS)
-nvim_lsp.eslint.setup {
-  capabilities = capabilities,
-  on_attach = function(client, bufnr)
-    -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
-    -- the resolved capabilities of the eslint server ourselves!
-    client.resolved_capabilities = {
-      document_formating = true,
-    }
-    vim.api.nvim_command('augroup Format')
-    vim.api.nvim_command('autocmd! * <buffer>')
-    vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.format(nil, 200)')
-    vim.api.nvim_command('augroup END')
-    common_on_attach(client, bufnr)
-  end,
-  settings = {
-    format = { enable = true }, -- this will enable formatting
-  },
-}
+-- nvim_lsp.eslint.setup {
+--   capabilities = capabilities,
+--   on_attach = function(client, bufnr)
+--     -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
+--     -- the resolved capabilities of the eslint server ourselves!
+--     client.resolved_capabilities = {
+--       document_formating = true,
+--     }
+--     vim.api.nvim_command('augroup Format')
+--     vim.api.nvim_command('autocmd! * <buffer>')
+--     vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.format(nil, 200)')
+--     vim.api.nvim_command('augroup END')
+--     common_on_attach(client, bufnr)
+--   end,
+--   settings = {
+--     format = { enable = true }, -- this will enable formatting
+--   },
+-- }
