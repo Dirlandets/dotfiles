@@ -39,6 +39,9 @@ keymap("i", "kj", "<ESC>", opts)
 -- Stay in ident mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+
+-- Apply macro over visual range
+keymap('x', '@', '":norm @" . getcharstr() . "<cr>"', { expr = true, silent = false, noremap = true })
 -- Press i to enter insert mode, and ii to exit insert mode.
 -- :vnoremap jk <Esc>
 -- :vnoremap kj <Esc>
