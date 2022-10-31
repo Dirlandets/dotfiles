@@ -39,6 +39,7 @@ keymap("i", "kj", "<ESC>", opts)
 -- Stay in ident mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
+keymap('x', '@', '":norm @" . getcharstr() . "<cr>"', { expr = true, noremap = true, silent = false })
 -- Press i to enter insert mode, and ii to exit insert mode.
 -- :vnoremap jk <Esc>
 -- :vnoremap kj <Esc>
