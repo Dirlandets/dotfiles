@@ -1,7 +1,7 @@
-local nvim_lsp = require('lspconfig')
+local lsp = require('lspconfig')
 local navic = require("nvim-navic")
 
-local capabilities = require('cmp_nvim_lsp').update_capabilities(
+local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
@@ -15,7 +15,7 @@ function common_on_attach(client, bufnr)
 end
 
 -- RUST
-nvim_lsp.rust_analyzer.setup {
+lsp.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.format(nil, 100)')
@@ -46,7 +46,7 @@ nvim_lsp.rust_analyzer.setup {
 }
 
 -- LUA
-nvim_lsp.sumneko_lua.setup {
+lsp.sumneko_lua.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
@@ -69,23 +69,23 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 -- PYTHON
-nvim_lsp.pyright.setup {
-  capabilities = capabilities,
-  on_attach = function(client, bufnr)
-    vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
-    common_on_attach(client, bufnr)
-  end,
-  pyton = {
-    analysis = {
-      autoSearchPaths = true,
-      diagnosticMode = "workspace",
-      useLibraryCodeForTypes = true
-    }
-  }
-}
+-- lsp.pyright.setup {
+--   capabilities = capabilities,
+--   on_attach = function(client, bufnr)
+--     vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
+--     common_on_attach(client, bufnr)
+--   end,
+--   pyton = {
+--     analysis = {
+--       autoSearchPaths = true,
+--       diagnosticMode = "workspace",
+--       useLibraryCodeForTypes = true
+--     }
+--   }
+-- }
 
 -- TS
-nvim_lsp.tsserver.setup {
+lsp.tsserver.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_command('autocmd BufWritePre *.tsx lua vim.lsp.buf.format(nil, 100)')
@@ -95,6 +95,7 @@ nvim_lsp.tsserver.setup {
     common_on_attach(client, bufnr)
   end,
 }
+
 
 -- ESLINT (JS, TS)
 -- nvim_lsp.eslint.setup {

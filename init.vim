@@ -44,8 +44,9 @@ if (has('termguicolors'))
   set termguicolors
 endif
 
+" let g:python3_host_prog = '/Users/developer/.pyenv/versions/py3nvim/bin/python/py3nvim'
 runtime ./plug.vim
-lua require('impatient')
+" lua require('impatient')
 if has("unix")
   let s:uname = system("uname -s")
   " Do Mac stuff
@@ -62,10 +63,11 @@ runtime ./bufferline.lua
 runtime ./feline.lua
 
 " LSP stuff
-runtime ./lsp/lsp_installer.lua
-runtime ./lsp/navic.lua
+
 runtime ./lsp/init.lua
+" runtime ./lsp/mason.lua
 runtime ./lsp/null_ls.lua
+runtime ./lsp/navic.lua
 runtime ./lsp/lsp_lines.lua
 runtime ./lsp/saga.lua
 
