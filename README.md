@@ -1,5 +1,10 @@
 # My NVIM config
 
+## Remove old neovim
+```rm -rf ~/.local/share/nvim/```
+```rm -rf ~/conf/nvim/```
+
+
 
 ## LSP-related plugins
 - [nvim-LSP-installer](https://github.com/williamboman/nvim-lsp-installer) 
