@@ -12,6 +12,8 @@ keymap("i", "gw", "<cmd>Bdelete<CR>", opts)
 keymap("v", "gw", "<cmd>Bdelete<CR>", opts)
 
 
+keymap("n", "tr", ":set relativenumber!<CR>", opts)
+
 -- line or visually selected block - alt+j/k
 -- TODO: Alt does not work
 -- inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -57,10 +59,8 @@ keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
 keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.format {async = true}<CR>', opts)
 
-keymap('n', '<space>bb', ':Buffers<CR>', opts)
-keymap('n', '<space>ww', ':Windows<CR>', opts)
-keymap('n', '<space>bb', ':Buffers<CR>', opts)
-keymap('n', '<space>ww', ':Windows<CR>', opts)
+keymap('n', '<space>bb', ':buffers<CR>', opts)
+keymap('n', '<space>ww', ':windows<CR>', opts)
 
 keymap('n', '<space>]', ':BufferLineMoveNext<CR>', opts)
 keymap('n', '<space>[', ':BufferLineMovePrev<CR>', opts)
@@ -74,14 +74,6 @@ keymap('v', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
 
 -- LSP LINES
 keymap('n', "<space>ll", '<cmd>lua require("lsp_lines").toggle()<CR>', opts)
-
--- Truuble
-keymap("n", "<leader>xx", "<cmd>Trouble<cr>", opts)
-keymap("n", "<leader>xw", "<cmd>Trouble workspace_diagnostics<cr>", opts)
-keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr>", opts)
-keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", opts)
-keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", opts)
-keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", opts)
 
 -- LSP SAGA
 -- use <C-t> to jump back
@@ -120,15 +112,15 @@ keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 
 -- Hop
-keymap('', 'f',
-  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
-  , opts)
+-- keymap('', 'f',
+--   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+--   , opts)
 keymap('', 'ff',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>"
   , opts)
-keymap('', 'F',
-  "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
-  , opts)
+-- keymap('', 'F',
+--   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+--   , opts)
 keymap('', 'FF',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>"
   , opts)

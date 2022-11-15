@@ -1,6 +1,4 @@
-local trouble = require("trouble.providers.telescope")
-
-require('telescope').setup{
+require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,

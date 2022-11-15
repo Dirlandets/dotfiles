@@ -38,11 +38,16 @@ set list
 set listchars=tab:>-,trail:⎵,nbsp:⎵
 :set timeoutlen=300
 
+set number relativenumber
+set nu rnu
+
 " true color
 " termguicolor breaks the colors fix later
 if (has('termguicolors'))
   set termguicolors
 endif
+" https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim#tips-for-using-pyenv
+let g:python3_host_prog = '/Users/developer/.pyenv/versions/py3nvim'
 
 runtime ./plug.vim
 lua require('impatient')
@@ -79,8 +84,6 @@ runtime ./mkdp.vim
 runtime ./orgmode.lua
 runtime ./neoclip.lua
 runtime ./nvim-autopairs.lua
-runtime ./trouble.lua
-runtime ./mind.lua
 runtime ./hop.lua
 runtime ./bool.lua
 "}}}
