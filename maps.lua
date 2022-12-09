@@ -11,6 +11,9 @@ keymap("n", "gw", "<cmd>Bdelete<CR>", opts)
 keymap("i", "gw", "<cmd>Bdelete<CR>", opts)
 keymap("v", "gw", "<cmd>Bdelete<CR>", opts)
 
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
 
 keymap("n", "tr", ":set relativenumber!<CR>", opts)
 
