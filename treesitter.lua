@@ -17,6 +17,10 @@ require('nvim-treesitter.configs').setup {
     "rust",
     "go",
     "lua",
+    "regex",
+    "bash",
+    "markdown",
+    "markdown_inline",
   },
   incremental_selection = {
     enable = true,

@@ -86,6 +86,7 @@ runtime ./neoclip.lua
 runtime ./nvim-autopairs.lua
 runtime ./hop.lua
 runtime ./bool.lua
+runtime ./noice.lua
 "}}}
 
 " colorscheme monokai
