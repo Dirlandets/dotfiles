@@ -30,7 +30,7 @@ set nobackup
 set backupskip=/tmp/*,/private/tmp/*
 filetype indent on      " load filetype-specific indent files
 
-set lazyredraw
+" set lazyredraw
 set synmaxcol=128
 syntax sync minlines=256
 

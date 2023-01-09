@@ -82,6 +82,6 @@ call plug#begin()
     " Noice
     Plug 'folke/noice.nvim'
     Plug 'MunifTanjim/nui.nvim'
-    Plug 'rcarriga/nvim-notify'
+    " Plug 'rcarriga/nvim-notify'
 
 call plug#end()
