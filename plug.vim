@@ -79,9 +79,4 @@ call plug#begin()
     " Switch bools
     Plug 'nat-418/boole.nvim'
 
-    " Noice
-    Plug 'folke/noice.nvim'
-    Plug 'MunifTanjim/nui.nvim'
-    " Plug 'rcarriga/nvim-notify'
-
 call plug#end()

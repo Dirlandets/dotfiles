@@ -2,12 +2,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   create_in_closed_folder = false,
   disable_netrw = false,
-  hijack_cursor = false,
+  hijack_cursor = true,
   hijack_netrw = true,
   hijack_unnamed_buffer_when_opening = false,
-  ignore_buffer_on_setup = false,
-  open_on_setup = true,
-  open_on_setup_file = false,
   open_on_tab = false,
   -- focus_empty_on_setup = false,  -- Deprecated
   ignore_buf_on_tab_change = {},
@@ -115,7 +112,6 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     update_root = false,
     ignore_list = {},
   },
-  ignore_ft_on_setup = {},
   system_open = {
     cmd = "",
     args = {},
@@ -205,6 +201,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     },
   },
 }
+
 vim.api.nvim_create_autocmd("BufEnter", {
   nested = true,
   callback = function()
@@ -213,3 +210,9 @@ vim.api.nvim_create_autocmd("BufEnter", {
     end
   end
 })
+
+local function open_nvim_tree(data)
+  require("nvim-tree.api").tree.toggle({ focus = false })
+end
+
+vim.api.nvim_create_autocmd({ "VimEnter" }, { callback = open_nvim_tree })
