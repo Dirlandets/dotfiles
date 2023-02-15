@@ -20,7 +20,7 @@ function common_on_attach(client, bufnr)
 end
 
 -- LUA
-nvim_lsp.sumneko_lua.setup {
+nvim_lsp.lua_ls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
