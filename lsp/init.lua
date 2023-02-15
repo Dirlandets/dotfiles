@@ -80,7 +80,6 @@ nvim_lsp.rust_analyzer.setup {
 nvim_lsp.pyright.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
     common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
@@ -136,25 +135,24 @@ nvim_lsp.eslint.setup {
 }
 
 -- Configure `ruff-lsp`.
--- if not nvim_lsp.ruff_lsp then
---   nvim_lsp.configs.ruff_lsp = {
---     default_config = {
---       cmd = { 'ruff-lsp --path /home/developer/.local/bin/ruff' },
---       filetypes = { 'python' },
---       root_dir = nvim_lsp.util.find_git_ancestor,
---       init_options = {
---         settings = {
---           args = {}
---         }
---       }
---     }
---   }
--- end
---
--- nvim_lsp.ruff_lsp.setup {
---   -- Installation pip install ruff-lsp
---   on_attach = function(client, bufnr)
---     common_on_attach(client, bufnr)
---   end,
--- }
---
+if not nvim_lsp.ruff_lsp then
+  nvim_lsp.configs.ruff_lsp = {
+    default_config = {
+      cmd = { 'ruff-lsp --path /home/developer/.local/bin/ruff' },
+      filetypes = { 'python' },
+      root_dir = nvim_lsp.util.find_git_ancestor,
+      init_options = {
+        settings = {
+          args = {}
+        }
+      }
+    }
+  }
+end
+
+nvim_lsp.ruff_lsp.setup {
+  -- Installation pip install ruff-lsp
+  on_attach = function(client, bufnr)
+    common_on_attach(client, bufnr)
+  end,
+}
