@@ -78,14 +78,14 @@ nvim_lsp.rust_analyzer.setup {
 
 -- PYTHON
 nvim_lsp.pyright.setup {
-  capabilities = capabilities,
+  -- capabilities = capabilities,
   on_attach = function(client, bufnr)
     common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
   pyton = {
     analysis = {
-      autoSearchPaths = true,
+      autoSearchPaths = false,
       diagnosticMode = "workspace",
       useLibraryCodeForTypes = true
     }
@@ -96,10 +96,6 @@ nvim_lsp.pyright.setup {
 nvim_lsp.tsserver.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    -- vim.api.nvim_command('autocmd BufWritePre *.tsx lua vim.lsp.buf.format(nil, 100)')
-    -- vim.api.nvim_command('autocmd BufWritePre *.jsx lua vim.lsp.buf.format(nil, 100)')
-    -- vim.api.nvim_command('autocmd BufWritePre *.ts lua vim.lsp.buf.format(nil, 100)')
-    -- vim.api.nvim_command('autocmd BufWritePre *.js lua vim.lsp.buf.format(nil, 100)')
     common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
@@ -118,41 +114,47 @@ nvim_lsp.volar.setup {
 nvim_lsp.eslint.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    -- neovim's LSP client does not currently support dynamic capabilities registration, so we need to set
-    -- the resolved capabilities of the eslint server ourselves!
     client.resolved_capabilities = {
       document_formating = true,
     }
-    -- vim.api.nvim_command('augroup Format')
-    -- vim.api.nvim_command('autocmd! * <buffer>')
-    -- vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.format(nil, 200)')
-    -- vim.api.nvim_command('augroup END')
+    vim.api.nvim_command('augroup Format')
+    vim.api.nvim_command('autocmd! * <buffer>')
+    vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.format(nil, 200)')
+    vim.api.nvim_command('augroup END')
     common_on_attach(client, bufnr)
   end,
-  -- settings = {
-  --   format = { enable = true }, -- this will enable formatting
-  -- },
+  settings = {
+    format = { enable = true }, -- this will enable formatting
+  },
 }
 
 -- Configure `ruff-lsp`.
-if not nvim_lsp.ruff_lsp then
-  nvim_lsp.configs.ruff_lsp = {
-    default_config = {
-      cmd = { 'ruff-lsp --path /home/developer/.local/bin/ruff' },
-      filetypes = { 'python' },
-      root_dir = nvim_lsp.util.find_git_ancestor,
-      init_options = {
-        settings = {
-          args = {}
-        }
-      }
-    }
-  }
-end
+-- if not nvim_lsp.ruff_lsp then
+--   nvim_lsp.configs.ruff_lsp = {
+--     default_config = {
+--       cmd = { 'ruff-lsp --path /home/developer/.local/bin/ruff' },
+--       filetypes = { 'python' },
+--       root_dir = nvim_lsp.util.find_git_ancestor,
+--       init_options = {
+--         settings = {
+--           args = {}
+--         }
+--       }
+--     }
+--   }
+-- end
 
-nvim_lsp.ruff_lsp.setup {
-  -- Installation pip install ruff-lsp
-  on_attach = function(client, bufnr)
-    common_on_attach(client, bufnr)
-  end,
-}
+-- nvim_lsp.ruff_lsp.setup {
+--   -- Installation pip install ruff-lsp
+--   init_options = {
+--     settings = {
+--       -- Any extra CLI arguments for `ruff` go here
+--     }
+--   },
+--   cmd = { '/home/developer/.pyenv/shims/ruff-lsp' },
+--   filetypes = { 'python' },
+--   root_dir = nvim_lsp.util.find_git_ancestor,
+--   on_attach = function(client, bufnr)
+--     common_on_attach(client, bufnr)
+--   end,
+-- }
