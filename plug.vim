@@ -79,4 +79,7 @@ call plug#begin()
     " Switch bools
     Plug 'nat-418/boole.nvim'
 
+    " Color schema
+    Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
 call plug#end()
