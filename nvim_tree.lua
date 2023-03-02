@@ -22,7 +22,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     centralize_selection = false,
     width = 30,
     hide_root_folder = false,
-    side = "left",
+    side = "right",
     preserve_window_proportions = false,
     number = false,
     relativenumber = true,
@@ -48,9 +48,9 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   renderer = {
     add_trailing = false,
     group_empty = false,
-    highlight_git = false,
-    full_name = false,
     highlight_opened_files = "none",
+    highlight_git = true,
+    full_name = true,
     root_folder_modifier = ":~",
     indent_width = 2,
     indent_markers = {
