@@ -127,34 +127,3 @@ nvim_lsp.eslint.setup {
     format = { enable = true }, -- this will enable formatting
   },
 }
-
--- Configure `ruff-lsp`.
--- if not nvim_lsp.ruff_lsp then
---   nvim_lsp.configs.ruff_lsp = {
---     default_config = {
---       cmd = { 'ruff-lsp --path /home/developer/.local/bin/ruff' },
---       filetypes = { 'python' },
---       root_dir = nvim_lsp.util.find_git_ancestor,
---       init_options = {
---         settings = {
---           args = {}
---         }
---       }
---     }
---   }
--- end
-
--- nvim_lsp.ruff_lsp.setup {
---   -- Installation pip install ruff-lsp
---   init_options = {
---     settings = {
---       -- Any extra CLI arguments for `ruff` go here
---     }
---   },
---   cmd = { '/home/developer/.pyenv/shims/ruff-lsp' },
---   filetypes = { 'python' },
---   root_dir = nvim_lsp.util.find_git_ancestor,
---   on_attach = function(client, bufnr)
---     common_on_attach(client, bufnr)
---   end,
--- }
