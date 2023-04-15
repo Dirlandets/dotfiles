@@ -31,6 +31,7 @@ call plug#begin()
     " Color schemas
     " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
     " Plug 'tanvirtin/monokai.nvim'
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
     " Statusbar
