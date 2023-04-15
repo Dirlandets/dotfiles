@@ -27,10 +27,13 @@ call plug#begin()
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*', 'do': 'make install_jsregexp'}
+    Plug 'rafamadriz/friendly-snippets'
+
 
     " Color schemas
     " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
     " Plug 'tanvirtin/monokai.nvim'
+    Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 
     " Statusbar

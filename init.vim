@@ -58,7 +58,8 @@ if has("unix")
     runtime ./macos.vim
   endif
 endif
-runtime ./tokionight.lua
+runtime ./colors/tokionight.lua
+runtime ./colors/catppuccin.lua
 runtime ./maps.lua
 runtime ./nvim_tree.lua
 runtime ./treesitter.lua
@@ -88,8 +89,4 @@ runtime ./hop.lua
 runtime ./bool.lua
 "}}}
 
-" colorscheme monokai
-" colorscheme monokai_pro
-" colorscheme monokai_soda
-" colorscheme monokai_ristretto
 colorscheme tokyonight
