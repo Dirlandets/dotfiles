@@ -48,13 +48,6 @@ keymap("v", ">", ">gv", opts)
 -- Apply macro over visual range
 keymap('x', '@', '":norm @" . getcharstr() . "<cr>"', { expr = true, silent = false, noremap = true })
 -- Press i to enter insert mode, and ii to exit insert mode.
--- :vnoremap jk <Esc>
--- :vnoremap kj <Esc>
--- LSPSAGA
--- keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
--- keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
--- keymap("n", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
--- keymap("v", "<F2>", ":<C-U>Lspsaga rename<CR>", opts)
 
 -- keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -94,7 +87,6 @@ keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
 
 -- Show line diagnostics
 keymap("n", "<space>de", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
@@ -138,3 +130,12 @@ keymap('', '<space>l', "<cmd>HopLineStart<cr>", opts)
 
 -- NvimTree
 keymap('n', '<space>tt', '<cmd>NvimTreeToggle<CR>', opts)
+
+
+vim.keymap.set({ 'n', 'v' }, '<space>tl', function()
+  vim.api.nvim_command("colorscheme catppuccin-latte")
+end, opts)
+
+vim.keymap.set({ 'n', 'v' }, '<space>td', function()
+  vim.api.nvim_command("colorscheme tokyonight")
+end, opts)
