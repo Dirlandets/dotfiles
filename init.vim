@@ -2,6 +2,7 @@ lua << EOF
   vim.g.loaded = 1
   vim.g.loaded_netrwPlugin = 1
 EOF
+let g:coq_settings = { 'auto_start': 'shut-up' }
 set number
 set noswapfile
 set scrolloff=7
@@ -47,7 +48,6 @@ if (has('termguicolors'))
   set termguicolors
 endif
 " https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim#tips-for-using-pyenv
-let g:python3_host_prog = '/Users/developer/.pyenv/versions/py3nvim'
 
 runtime ./plug.vim
 lua require('impatient')
@@ -77,7 +77,8 @@ runtime ./lsp/saga.lua
 
 runtime ./telescope.lua
 runtime ./neoclip.lua
-runtime ./cmp.lua
+" runtime ./cmp.lua
+runtime .coq.lua
 runtime ./comment.lua
 runtime ./gitsigns.lua
 runtime ./ts_autotag.lua

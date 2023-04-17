@@ -1,7 +1,11 @@
 local nvim_lsp = require('lspconfig')
 local navic = require("nvim-navic")
+local coq = require("coq") -- add this
 
-local capabilities = require('cmp_nvim_lsp').default_capabilities(
+-- local capabilities = require('cmp_nvim_lsp').default_capabilities(
+--   vim.lsp.protocol.make_client_capabilities()
+-- )
+local capabilities = coq.lsp_ensure_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 

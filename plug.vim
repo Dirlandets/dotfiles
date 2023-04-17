@@ -20,14 +20,14 @@ call plug#begin()
     Plug 'glepnir/lspsaga.nvim'
     Plug 'williamboman/nvim-lsp-installer'
 
-    Plug 'hrsh7th/cmp-nvim-lsp'
-    Plug 'hrsh7th/cmp-buffer'
-    Plug 'hrsh7th/cmp-path'
-    Plug 'hrsh7th/nvim-cmp'
-    Plug 'hrsh7th/cmp-cmdline'
-    Plug 'saadparwaiz1/cmp_luasnip'
-    Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*', 'do': 'make install_jsregexp'}
-    Plug 'rafamadriz/friendly-snippets'
+    " Plug 'hrsh7th/cmp-nvim-lsp'
+    " Plug 'hrsh7th/cmp-buffer'
+    " Plug 'hrsh7th/cmp-path'
+    " Plug 'hrsh7th/nvim-cmp'
+    " Plug 'hrsh7th/cmp-cmdline'
+    " Plug 'saadparwaiz1/cmp_luasnip'
+    " Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*', 'do': 'make install_jsregexp'}
+    " Plug 'rafamadriz/friendly-snippets'
 
 
     " Color schemas
@@ -87,14 +87,14 @@ call plug#begin()
 
     " COQ-nvim stuff (experimental)
     " main one
-    " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+    Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
     " " 9000+ Snippets
-    " Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+    Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
     "
     " " lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
     " " Need to **configure separately**
     "
-    " Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+    Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
     " - shell repl
     " - scientific calculator
     " - comment banner
