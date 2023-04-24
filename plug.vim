@@ -26,7 +26,7 @@ call plug#begin()
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'saadparwaiz1/cmp_luasnip'
-    Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*', 'do': 'make install_jsregexp'}
+    Plug 'L3MON4D3/LuaSnip', {'tag': 'v1.*', 'do': 'make install_jsregexp'}
     Plug 'rafamadriz/friendly-snippets'
 
 
@@ -39,9 +39,10 @@ call plug#begin()
     " Statusbar
     Plug 'feline-nvim/feline.nvim'
 
-    " Nvim tree
-    Plug 'kyazdani42/nvim-web-devicons' " for file icons
-    Plug 'kyazdani42/nvim-tree.lua'
+    " File manager
+    " Plug 'kyazdani42/nvim-web-devicons'
+    " Plug 'kyazdani42/nvim-tree.lua'
+    Plug 'ms-jpq/chadtree', {'branch': 'chad', 'do': 'python3 -m chadtree deps'}
 
     " Bufferline
     Plug 'akinsho/bufferline.nvim'
