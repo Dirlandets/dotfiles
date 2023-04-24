@@ -47,7 +47,7 @@ if (has('termguicolors'))
   set termguicolors
 endif
 " https://github.com/deoplete-plugins/deoplete-jedi/wiki/Setting-up-Python-for-Neovim#tips-for-using-pyenv
-let g:python3_host_prog = '/Users/developer/.pyenv/versions/py3nvim'
+" let g:python3_host_prog = '/Users/developer/.pyenv/versions/py3nvim'
 
 runtime ./plug.vim
 lua require('impatient')
@@ -61,20 +61,19 @@ endif
 runtime ./colors/tokionight.lua
 runtime ./colors/catppuccin.lua
 runtime ./maps.lua
-runtime ./nvim_tree.lua
 runtime ./treesitter.lua
 runtime ./diagnostics.lua
 runtime ./bufferline.lua
 runtime ./feline.lua
-
-" LSP stuff
+"
+runtime ./chadtree.lua
+" " LSP stuff
 runtime ./lsp/lsp_installer.lua
 runtime ./lsp/navic.lua
 runtime ./lsp/init.lua
 runtime ./lsp/null_ls.lua
 runtime ./lsp/lsp_lines.lua
 runtime ./lsp/saga.lua
-
 runtime ./telescope.lua
 runtime ./neoclip.lua
 runtime ./cmp.lua
@@ -82,7 +81,6 @@ runtime ./comment.lua
 runtime ./gitsigns.lua
 runtime ./ts_autotag.lua
 runtime ./mkdp.vim
-runtime ./orgmode.lua
 runtime ./neoclip.lua
 runtime ./nvim-autopairs.lua
 runtime ./hop.lua
