@@ -33,16 +33,6 @@ keymap("n", "<C-h>", "<C-w>h", opts)
 keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
-
--- greatest remap ever
-vim.keymap.set("x", "<leader>p", [["_dP]])
--- next greatest remap ever : asbjornHaland
-vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
-vim.keymap.set("n", "<leader>Y", [["+Y]])
-
-vim.keymap.set({ "n", "v" }, "<leader>d", [["_d]])
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -102,6 +92,14 @@ keymap("n", "<space>de", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 
+-- Only jump to error
+-- keymap("n", "[E", function()
+--   require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
+-- end, { silent = true })
+-- keymap("n", "]E", function()
+--   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
+-- end, { silent = true })
+
 -- Outline
 keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
 
@@ -109,9 +107,15 @@ keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 
 -- Hop
+-- keymap('', 'f',
+--   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
+--   , opts)
 keymap('', 'ff',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>"
   , opts)
+-- keymap('', 'F',
+--   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
+--   , opts)
 keymap('', 'FF',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>"
   , opts)
@@ -125,8 +129,8 @@ keymap('', '<space><space>', "<cmd>lua require'hop'.hint_char2({})<cr>", opts)
 keymap('', '<space>l', "<cmd>HopLineStart<cr>", opts)
 
 -- NvimTree
--- keymap('n', '<space>tt', '<cmd>NvimTreeToggle<CR>', opts)
-keymap('n', '<space>tt', '<cmd>CHADopen<CR>', opts)
+keymap('n', '<space>tt', '<cmd>NvimTreeToggle<CR>', opts)
+
 
 vim.keymap.set({ 'n', 'v' }, '<space>tl', function()
   vim.api.nvim_command("colorscheme catppuccin-latte")
