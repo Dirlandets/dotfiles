@@ -9,68 +9,7 @@ local sources = {
   }),
   null_ls.builtins.diagnostics.eslint_d,
   null_ls.builtins.diagnostics.ruff,
-  -- null_ls.builtins.diagnostics.ruff.with({
-  --   command = "docker",
-  --   args = {
-  --     "run",
-  --     "-v",
-  --     string.format(
-  --       "%s:/pyproject.toml",
-  --       vim.fn.expand(string.format("%s/pyproject.toml", vim.env.PWD))
-  --     ),
-  --     "--rm",
-  --     "-i",
-  --     "--entrypoint",
-  --     "ruff",
-  --     "ruff:latest",
-  --     "--config",
-  --     "/pyproject.toml",
-  --     "-n",
-  --     "-e",
-  --     "--stdin-filename",
-  --     "$FILENAME",
-  --     "-"
-  --   },
-  --   -- extra_args = {
-  --   --   "-v",
-  --   --   string.format(
-  --   --     "%s:/pyproject.toml",
-  --   --     vim.fn.expand("./pyproject.toml")
-  --   --   )
-  --   -- },
-  -- }),
   null_ls.builtins.formatting.ruff,
-  -- null_ls.builtins.formatting.ruff.with({
-  --   command = "docker",
-  --   args = {
-  --     "run",
-  --     "-v",
-  --     string.format(
-  --       "%s:/pyproject.toml",
-  --       vim.fn.expand(string.format("%s/pyproject.toml", vim.env.PWD))
-  --     ),
-  --     "--rm",
-  --     "-i",
-  --     "--entrypoint",
-  --     "ruff",
-  --     "ruff:latest",
-  --     "--config",
-  --     "/pyproject.toml",
-  --     "-n",
-  --     "-e",
-  --     "--stdin-filename",
-  --     "$FILENAME",
-  --     "--fix",
-  --     "-"
-  --   },
-  --   -- extra_args = {
-  --   --   "-v",
-  --   --   string.format(
-  --   --     "%s:/pyproject.toml",
-  --   --     vim.fn.expand("./pyproject.toml")
-  --   --   )
-  --   -- },
-  -- }),
   null_ls.builtins.diagnostics.hadolint.with({
     command = "docker",
     args = { "run", "--rm", "-i", "--entrypoint", "/bin/hadolint", "hadolint/hadolint", "--no-fail", "--format=json", "-" }

@@ -32,24 +32,20 @@ require('lspsaga').setup({
     sign_priority = 20,
     virtual_text = false,
   },
-  -- finder icons
-  finder_icons = {
-    def = '  ',
-    ref = '諭 ',
-    link = '  ',
-  },
-  -- finder do lsp request timeout
-  -- if your project big enough or your server very slow
-  -- you may need to increase this value
-  finder_request_timeout = 1500,
-  finder_action_keys = {
-    open = "o",
-    vsplit = "s",
-    split = "i",
-    tabe = "t",
-    quit = "q",
-    scroll_down = "<C-f>",
-    scroll_up = "<C-b>", -- quit can be a table
+  finder = {
+    max_height = 0.5,
+    min_width = 30,
+    force_max_height = false,
+    keys = {
+      jump_to = 'p',
+      expand_or_jump = 'o',
+      vsplit = 's',
+      split = 'i',
+      tabe = 't',
+      tabnew = 'r',
+      quit = { 'q', '<ESC>' },
+      close_in_preview = '<ESC>',
+    },
   },
   code_action_keys = {
     quit = "q",

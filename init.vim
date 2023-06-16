@@ -41,6 +41,9 @@ set listchars=tab:>-,trail:⎵,nbsp:⎵
 set number relativenumber
 set nu rnu
 
+" spell languages
+set spelllang=en_us
+
 " true color
 " termguicolor breaks the colors fix later
 if (has('termguicolors'))
