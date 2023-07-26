@@ -4,11 +4,11 @@ local sources = {
   null_ls.builtins.diagnostics.mypy.with({
     timeout = 60000,
   }),
-  null_ls.builtins.diagnostics.flake8.with({
-    timeout = 60000,
-  }),
+  -- null_ls.builtins.diagnostics.flake8.with({
+  --   timeout = 60000,
+  -- }),
   null_ls.builtins.diagnostics.eslint_d,
-  null_ls.builtins.diagnostics.ruff,
+  -- null_ls.builtins.diagnostics.ruff,
   null_ls.builtins.formatting.ruff,
   null_ls.builtins.diagnostics.hadolint.with({
     command = "docker",
@@ -17,7 +17,7 @@ local sources = {
   -- Codeactions
   null_ls.builtins.code_actions.eslint_d,
   -- Formatters
-  null_ls.builtins.formatting.ruff,
+  -- null_ls.builtins.formatting.ruff,
   null_ls.builtins.formatting.rustfmt,
   null_ls.builtins.formatting.eslint_d,
 }

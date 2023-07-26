@@ -49,7 +49,7 @@ keymap("v", ">", ">gv", opts)
 keymap('x', '@', '":norm @" . getcharstr() . "<cr>"', { expr = true, silent = false, noremap = true })
 -- Press i to enter insert mode, and ii to exit insert mode.
 
--- keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
 keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
 keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
@@ -86,7 +86,7 @@ keymap("n", "<F2>", "<cmd>Lspsaga rename<CR>", opts)
 keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
 
 -- Show line diagnostics
-keymap("n", "<space>de", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
+-- keymap("n", "<space>de", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)

@@ -17,6 +17,7 @@ function common_on_attach(client, bufnr)
     '<cmd>lua vim.lsp.buf.declaration()<CR>',
     bufopts
   )
+  vim.keymap.set('n', '<space>df', function() vim.lsp.buf.format { async = true } end, bufopts)
 end
 
 -- LUA
@@ -94,6 +95,15 @@ nvim_lsp.pyright.setup {
 
 -- TS
 nvim_lsp.tsserver.setup {
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    common_on_attach(client, bufnr)
+    navic.attach(client, bufnr)
+  end,
+}
+
+-- Terraform
+nvim_lsp.tflint.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     common_on_attach(client, bufnr)

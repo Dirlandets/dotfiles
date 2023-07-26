@@ -18,7 +18,7 @@ call plug#begin()
     " Completion plugins
     Plug 'neovim/nvim-lspconfig'
     Plug 'glepnir/lspsaga.nvim'
-    Plug 'williamboman/nvim-lsp-installer'
+    " Plug 'williamboman/nvim-lsp-installer'
 
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
@@ -28,6 +28,10 @@ call plug#begin()
     Plug 'saadparwaiz1/cmp_luasnip'
     Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*', 'do': 'make install_jsregexp'}
     Plug 'rafamadriz/friendly-snippets'
+
+
+    " Linters
+    Plug 'mfussenegger/nvim-lint'
 
 
     " Color schemas
@@ -84,6 +88,10 @@ call plug#begin()
 
     " Color schema
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+
+    Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
+
+    " Plug 'dense-analysis/ale'
 
     " COQ-nvim stuff (experimental)
     " main one

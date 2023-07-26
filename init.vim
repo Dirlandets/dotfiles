@@ -70,11 +70,16 @@ runtime ./diagnostics.lua
 runtime ./bufferline.lua
 runtime ./feline.lua
 
+" Masson (DAP, LSP)
+runtime ./masson.lua
+
+runtime ./nvim_lint.lua
+
 " LSP stuff
-runtime ./lsp/lsp_installer.lua
+" runtime ./lsp/lsp_installer.lua
 runtime ./lsp/navic.lua
 runtime ./lsp/init.lua
-runtime ./lsp/null_ls.lua
+" runtime ./lsp/null_ls.lua
 runtime ./lsp/lsp_lines.lua
 runtime ./lsp/saga.lua
 
