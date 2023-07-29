@@ -83,6 +83,8 @@ runtime ./lsp/init.lua
 runtime ./lsp/lsp_lines.lua
 runtime ./lsp/saga.lua
 
+runtime ./nvim_test.lua
+
 runtime ./telescope.lua
 runtime ./neoclip.lua
 runtime ./cmp.lua
