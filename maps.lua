@@ -92,30 +92,13 @@ keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
 
--- Only jump to error
--- keymap("n", "[E", function()
---   require("lspsaga.diagnostic").goto_prev({ severity = vim.diagnostic.severity.ERROR })
--- end, { silent = true })
--- keymap("n", "]E", function()
---   require("lspsaga.diagnostic").goto_next({ severity = vim.diagnostic.severity.ERROR })
--- end, { silent = true })
-
--- Outline
-keymap("n", "<leader>o", "<cmd>LSoutlineToggle<CR>", opts)
-
 -- Hover Doc
 keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>", opts)
 
 -- Hop
--- keymap('', 'f',
---   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = true })<cr>"
---   , opts)
 keymap('', 'ff',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.AFTER_CURSOR, current_line_only = false })<cr>"
   , opts)
--- keymap('', 'F',
---   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true })<cr>"
---   , opts)
 keymap('', 'FF',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = false })<cr>"
   , opts)
@@ -130,6 +113,9 @@ keymap('', '<space>l', "<cmd>HopLineStart<cr>", opts)
 
 -- NvimTree
 keymap('n', '<space>tt', '<cmd>NvimTreeToggle<CR>', opts)
+
+-- Tests
+keymap('n', '<space>rt', '<cmd>TestNearest<CR>', opts)
 
 
 vim.keymap.set({ 'n', 'v' }, '<space>tl', function()

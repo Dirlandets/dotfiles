@@ -39,6 +39,7 @@ call plug#begin()
     " Plug 'tanvirtin/monokai.nvim'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+    Plug 'klen/nvim-test'
 
     " Statusbar
     Plug 'feline-nvim/feline.nvim'
