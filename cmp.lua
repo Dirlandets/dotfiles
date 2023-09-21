@@ -42,6 +42,37 @@ cmp.setup {
     end,
   },
   sources = {
+    {
+      name = "copilot",
+      -- keyword_length = 0,
+      max_item_count = 3,
+      trigger_characters = {
+        {
+          ".",
+          ":",
+          "(",
+          "'",
+          '"',
+          "[",
+          ",",
+          "#",
+          "*",
+          "@",
+          "|",
+          "=",
+          "-",
+          "{",
+          "/",
+          "\\",
+          "+",
+          "?",
+          " ",
+          -- "\t",
+          -- "\n",
+        },
+      },
+      group_index = 2,
+    },
     { name = 'luasnip' },
     { name = 'path' },
     { name = 'nvim_lsp' },
@@ -50,6 +81,13 @@ cmp.setup {
   completion = {
     autocomplete = false,
   },
+  -- formatting = {
+  --   format = require('lspkind').cmp_format({
+  --     mode = "symbol",
+  --     max_width = 50,
+  --     symbol_map = { Copilot = "" }
+  --   })
+  -- }
 }
 
 cmp.event:on(

@@ -76,7 +76,6 @@ nvim_lsp.rust_analyzer.setup {
   }
 }
 
-
 -- PYTHON
 nvim_lsp.pyright.setup {
   -- capabilities = capabilities,
