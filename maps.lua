@@ -85,9 +85,6 @@ keymap("n", "<space>rn", "<cmd>Lspsaga rename<CR>", opts)
 -- Definition preview
 keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
 
--- Show line diagnostics
--- keymap("n", "<space>de", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
-
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
 keymap("n", "]e", "<cmd>Lspsaga diagnostic_jump_prev<CR>", opts)
@@ -124,11 +121,6 @@ keymap("i", "<space>w", "<cmd> lua require('copilot.suggestion').accept_word()<C
 keymap("i", "<space>a", "<cmd> lua require('copilot.suggestion').accept_line()<CR>", opts)
 keymap("n", "<space>ct", "<cmd> lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
 keymap("i", "<space>n", "<cmd> lua require('copilot.suggestion').next()<CR>", opts)
-
--- require("copilot.suggestion").prev()
--- require("copilot.suggestion").dismiss()
-
-
 
 vim.keymap.set({ 'n', 'v' }, '<space>tl', function()
   vim.api.nvim_command("colorscheme catppuccin-latte")
