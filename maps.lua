@@ -65,8 +65,8 @@ keymap('n', '<space>[', ':BufferLineMovePrev<CR>', opts)
 keymap('n', '<space>ff', '<cmd>Telescope find_files<cr>', opts)
 keymap('n', '<space>fg', '<cmd>Telescope live_grep<cr>', opts)
 keymap('n', '<space>fb', '<cmd>Telescope buffers<cr>', opts)
-keymap('n', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
-keymap('v', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
+keymap('', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
+keymap('', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
 
 -- LSP LINES
 keymap('n', "<space>ll", '<cmd>lua require("lsp_lines").toggle()<CR>', opts)
@@ -80,13 +80,10 @@ keymap("n", "<space>ca", "<cmd>Lspsaga code_action<CR>", opts)
 keymap("v", "<space>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
 
 -- Rename
-keymap("n", "<F2>", "<cmd>Lspsaga rename<CR>", opts)
+keymap("n", "<space>rn", "<cmd>Lspsaga rename<CR>", opts)
 
 -- Definition preview
 keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
-
--- Show line diagnostics
--- keymap("n", "<space>de", "<cmd>Lspsaga show_line_diagnostics<CR>", opts)
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
@@ -117,6 +114,13 @@ keymap('n', '<space>tt', '<cmd>NvimTreeToggle<CR>', opts)
 -- Tests
 keymap('n', '<space>rt', '<cmd>TestNearest<CR>', opts)
 
+
+-- Copilot
+keymap("n", "<space>rn", "<cmd>Lspsaga rename<CR>", opts)
+keymap("i", "<space>w", "<cmd> lua require('copilot.suggestion').accept_word()<CR>", opts)
+keymap("i", "<space>a", "<cmd> lua require('copilot.suggestion').accept_line()<CR>", opts)
+keymap("n", "<space>ct", "<cmd> lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
+keymap("i", "<space>n", "<cmd> lua require('copilot.suggestion').next()<CR>", opts)
 
 vim.keymap.set({ 'n', 'v' }, '<space>tl', function()
   vim.api.nvim_command("colorscheme catppuccin-latte")

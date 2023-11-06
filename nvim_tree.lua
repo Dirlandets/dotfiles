@@ -11,25 +11,17 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   reload_on_bufenter = true,
   respect_buf_cwd = false,
   on_attach = "default",
-  remove_keymaps = false,
   select_prompts = false,
   view = {
     centralize_selection = false,
     cursorline = true,
     debounce_delay = 15,
     width = 30,
-    hide_root_folder = false,
     side = "left",
     preserve_window_proportions = false,
     number = false,
     relativenumber = false,
     signcolumn = "yes",
-    mappings = {
-      custom_only = false,
-      list = {
-        -- user mappings go here
-      },
-    },
     float = {
       enable = false,
       quit_on_focus_loss = true,
@@ -53,7 +45,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     root_folder_label = ":~:s?$?/..?",
     indent_width = 2,
     indent_markers = {
-      enable = false,
+      enable = true,
       inline_arrows = true,
       icons = {
         corner = "└",
@@ -151,7 +143,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     ignore = true,
     show_on_dirs = true,
     show_on_open_dirs = true,
-    timeout = 400,
+    timeout = 700,
   },
   modified = {
     enable = false,
@@ -242,7 +234,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
 vim.api.nvim_create_autocmd("VimEnter", {
   nested = true,
   callback = function()
-    require("nvim-tree.api").tree.open({ focus = true })
+    require("nvim-tree.api").tree.open({ focus = false })
   end
 })
 vim.api.nvim_create_autocmd({ "QuitPre" }, {

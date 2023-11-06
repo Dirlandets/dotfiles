@@ -5,12 +5,12 @@ require('bufferline').setup {
   --   }
   -- },
   options = {
-    numbers = "none", -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
+    numbers = "none",                    -- | "ordinal" | "buffer_id" | "both" | function({ ordinal, id, lower, raise }): string,
     --- @deprecated, please specify numbers as a function to customize the styling
-    close_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
+    close_command = "Bdelete! %d",       -- can be a string | function, see "Mouse actions"
     right_mouse_command = "Bdelete! %d", -- can be a string | function, see "Mouse actions"
-    left_mouse_command = "Buffer %d", -- can be a string | function, see "Mouse actions"
-    middle_mouse_command = nil, -- can be a string | function, see "Mouse actions"
+    left_mouse_command = "Buffer %d",    -- can be a string | function, see "Mouse actions"
+    middle_mouse_command = nil,          -- can be a string | function, see "Mouse actions"
     -- NOTE: this plugin is designed with this icon in mind,
     -- and so changing this is NOT recommended, this is intended
     -- as an escape hatch for people who cannot bear it for whatever reason
@@ -27,12 +27,6 @@ require('bufferline').setup {
     --- Please note some names can/will break the
     --- bufferline so use this at your discretion knowing that it has
     --- some limitations that will *NOT* be fixed.
-    name_formatter = function(buf) -- buf contains a "name", "path" and "bufnr"
-      -- remove extension from markdown files for example
-      if buf.name:match('%.md') then
-        return vim.fn.fnamemodify(buf.name, ':t:r')
-      end
-    end,
     max_name_length = 30,
     max_prefix_length = 15, -- prefix used when a buffer is de-duplicated
     tab_size = 25,

@@ -3,7 +3,6 @@ if has("nvim")
 endif
 
 call plug#begin()
-
     Plug 'lewis6991/impatient.nvim'
     Plug 'mhinz/vim-startify'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
@@ -59,7 +58,7 @@ call plug#begin()
 
     Plug 'windwp/nvim-ts-autotag'
     " Markdown
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
 
     Plug 'nvim-orgmode/orgmode'
 
@@ -89,24 +88,13 @@ call plug#begin()
 
     " Color schema
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-
     Plug 'williamboman/mason.nvim', { 'do': ':MasonUpdate' }
 
-    " Plug 'dense-analysis/ale'
+    " Rust stuff
+    Plug 'simrat39/rust-tools.nvim',
 
-    " COQ-nvim stuff (experimental)
-    " main one
-    " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-    " " 9000+ Snippets
-    " Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-    "
-    " " lua & third party sources -- See https://github.com/ms-jpq/coq.thirdparty
-    " " Need to **configure separately**
-    "
-    " Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-    " - shell repl
-    " - scientific calculator
-    " - comment banner
-    " - etc
+    " Copylot
+    Plug 'zbirenbaum/copilot.lua',
+    Plug 'zbirenbaum/copilot-cmp',
 
 call plug#end()

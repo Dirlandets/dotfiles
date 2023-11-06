@@ -26,7 +26,7 @@ require('lspsaga').setup({
   code_action_num_shortcut = true,
   -- same as nvim-lightbulb but async
   code_action_lightbulb = {
-    enable = true,
+    enable = false,
     sign = true,
     enable_in_insert = true,
     sign_priority = 20,
