@@ -28,7 +28,6 @@ call plug#begin()
     Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*', 'do': 'make install_jsregexp'}
     Plug 'rafamadriz/friendly-snippets'
 
-
     " Linters
     Plug 'mfussenegger/nvim-lint'
 
@@ -96,5 +95,8 @@ call plug#begin()
     " Copylot
     Plug 'zbirenbaum/copilot.lua',
     Plug 'zbirenbaum/copilot-cmp',
+
+    " Olama
+    Plug 'David-Kunz/gen.nvim'
 
 call plug#end()

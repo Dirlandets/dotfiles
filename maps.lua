@@ -122,6 +122,10 @@ keymap("i", "<space>a", "<cmd> lua require('copilot.suggestion').accept_line()<C
 keymap("n", "<space>ct", "<cmd> lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
 keymap("i", "<space>n", "<cmd> lua require('copilot.suggestion').next()<CR>", opts)
 
+-- Olama
+keymap('v', '<space>]', ':Gen<CR>', opts)
+keymap('n', '<space>]', ':Gen<CR>', opts)
+
 vim.keymap.set({ 'n', 'v' }, '<space>tl', function()
   vim.api.nvim_command("colorscheme catppuccin-latte")
 end, opts)
@@ -129,3 +133,10 @@ end, opts)
 vim.keymap.set({ 'n', 'v' }, '<space>td', function()
   vim.api.nvim_command("colorscheme tokyonight")
 end, opts)
+
+
+if vim.lsp.inlay_hint then
+  vim.keymap.set('n', '<space>uh', function()
+    vim.lsp.inlay_hint(0, nil)
+  end, { desc = 'Toggle Inlay Hints' })
+end
