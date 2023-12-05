@@ -135,7 +135,7 @@ nvim_lsp.tflint.setup {
 }
 
 -- Volar
-nvim_lsp.volar.setup {
+nvim_lsp.vls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     common_on_attach(client, bufnr)
