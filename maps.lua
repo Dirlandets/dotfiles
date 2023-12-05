@@ -2,8 +2,8 @@ local opts = { noremap = true, silent = false }
 -- Shorten nvim_set_keymap name
 local keymap = vim.api.nvim_set_keymap
 
--- Remap leader key to space
--- keymap("", "<Space>", "<Nop>", opts)
+-- Remap leader key to leader
+-- keymap("", "<leader>", "<Nop>", opts)
 -- vim.g.mapleader = " "
 -- vim.g.maplocalleader = " "
 -- Close buffer
@@ -47,43 +47,36 @@ keymap("v", ">", ">gv", opts)
 
 -- Apply macro over visual range
 keymap('x', '@', '":norm @" . getcharstr() . "<cr>"', { expr = true, silent = false, noremap = true })
--- Press i to enter insert mode, and ii to exit insert mode.
+keymap('n', '<leader>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+keymap('n', '<leader>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+keymap('n', '<leader>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+keymap('n', '<leader>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+keymap('n', '<leader>df', '<cmd>lua vim.lsp.buf.format {async = true}<CR>', opts)
 
-keymap('n', '<space>de', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-keymap('n', '<space>dp', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-keymap('n', '<space>dn', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-keymap('n', '<space>dl', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-keymap('n', '<space>df', '<cmd>lua vim.lsp.buf.format {async = true}<CR>', opts)
+keymap('n', '<leader>bb', ':buffers<CR>', opts)
+keymap('n', '<leader>ww', ':windows<CR>', opts)
 
-keymap('n', '<space>bb', ':buffers<CR>', opts)
-keymap('n', '<space>ww', ':windows<CR>', opts)
-
-keymap('n', '<space>]', ':BufferLineMoveNext<CR>', opts)
-keymap('n', '<space>[', ':BufferLineMovePrev<CR>', opts)
-
+keymap('n', '<leader>]', ':BufferLineMoveNext<CR>', opts)
+keymap('n', '<leader>[', ':BufferLineMovePrev<CR>', opts)
 -- TELESCOPE
-keymap('n', '<space>ff', '<cmd>Telescope find_files<cr>', opts)
-keymap('n', '<space>fg', '<cmd>Telescope live_grep<cr>', opts)
-keymap('n', '<space>fb', '<cmd>Telescope buffers<cr>', opts)
-keymap('', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
-keymap('', '<space>fp', '<cmd>Telescope neoclip<cr>', opts)
+keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
+keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
+keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
+keymap('', '<leader>fp', '<cmd>Telescope neoclip<cr>', opts)
+keymap('', '<leader>fp', '<cmd>Telescope neoclip<cr>', opts)
 
 -- LSP LINES
-keymap('n', "<space>ll", '<cmd>lua require("lsp_lines").toggle()<CR>', opts)
-
+keymap('n', "<leader>ll", '<cmd>lua require("lsp_lines").toggle()<CR>', opts)
 -- LSP SAGA
 -- use <C-t> to jump back
-keymap("n", "gh", "<cmd>Lspsaga lsp_finder<CR>", opts)
+keymap("n", "gh", "<cmd>Lspsaga finder<CR>", opts)
 
 -- Code action
-keymap("n", "<space>ca", "<cmd>Lspsaga code_action<CR>", opts)
-keymap("v", "<space>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
+keymap("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts)
+keymap("v", "<leader>ca", "<cmd><C-U>Lspsaga range_code_action<CR>", opts)
 
 -- Rename
-keymap("n", "<space>rn", "<cmd>Lspsaga rename<CR>", opts)
-
--- Definition preview
-keymap("n", "<leader>gd", "<cmd>Lspsaga preview_definition<CR>", opts)
+keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 
 -- Diagnsotic jump can use `<c-o>` to jump back
 keymap("n", "[e", "<cmd>Lspsaga diagnostic_jump_next<CR>", opts)
@@ -105,38 +98,38 @@ keymap('', 'tt',
 keymap('', 'TT',
   "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })<cr>"
   , opts)
-keymap('', '<space><space>', "<cmd>lua require'hop'.hint_char2({})<cr>", opts)
-keymap('', '<space>l', "<cmd>HopLineStart<cr>", opts)
+keymap('', '<leader><leader>', "<cmd>lua require'hop'.hint_char2({})<cr>", opts)
+keymap('', '<leader>l', "<cmd>HopLineStart<cr>", opts)
 
 -- NvimTree
-keymap('n', '<space>tt', '<cmd>NvimTreeToggle<CR>', opts)
+keymap('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', opts)
 
 -- Tests
-keymap('n', '<space>rt', '<cmd>TestNearest<CR>', opts)
+keymap('n', '<leader>rt', '<cmd>TestNearest<CR>', opts)
 
 
 -- Copilot
-keymap("n", "<space>rn", "<cmd>Lspsaga rename<CR>", opts)
-keymap("i", "<space>w", "<cmd> lua require('copilot.suggestion').accept_word()<CR>", opts)
-keymap("i", "<space>a", "<cmd> lua require('copilot.suggestion').accept_line()<CR>", opts)
-keymap("n", "<space>ct", "<cmd> lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
-keymap("i", "<space>n", "<cmd> lua require('copilot.suggestion').next()<CR>", opts)
+keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
+keymap("i", "<leader>w", "<cmd> lua require('copilot.suggestion').accept_word()<CR>", opts)
+keymap("i", "<leader>a", "<cmd> lua require('copilot.suggestion').accept_line()<CR>", opts)
+keymap("n", "<leader>ct", "<cmd> lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
+keymap("i", "<leader>n", "<cmd> lua require('copilot.suggestion').next()<CR>", opts)
 
 -- Olama
-keymap('v', '<space>]', ':Gen<CR>', opts)
-keymap('n', '<space>]', ':Gen<CR>', opts)
+keymap('v', '<leader>]', ':Gen<CR>', opts)
+keymap('n', '<leader>]', ':Gen<CR>', opts)
 
-vim.keymap.set({ 'n', 'v' }, '<space>tl', function()
+vim.keymap.set({ 'n', 'v' }, '<leader>tl', function()
   vim.api.nvim_command("colorscheme catppuccin-latte")
 end, opts)
 
-vim.keymap.set({ 'n', 'v' }, '<space>td', function()
+vim.keymap.set({ 'n', 'v' }, '<leader>td', function()
   vim.api.nvim_command("colorscheme tokyonight")
 end, opts)
 
 
 if vim.lsp.inlay_hint then
-  vim.keymap.set('n', '<space>uh', function()
+  vim.keymap.set('n', '<leader>uh', function()
     vim.lsp.inlay_hint(0, nil)
   end, { desc = 'Toggle Inlay Hints' })
 end
