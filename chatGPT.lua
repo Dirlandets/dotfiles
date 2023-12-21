@@ -14,10 +14,10 @@ require("chatgpt").setup {
     },
   },
   chat = {
-    welcome_message = WELCOME_MESSAGE,
+    welcome_message = "Welcome to ChatGPT! Press <C-n> to start a new session.",
     loading_text = "Loading, please wait ...",
-    question_sign = "", -- 🙂
-    answer_sign = "ﮧ", -- 🤖
+    question_sign = "🙂",
+    answer_sign = "🤖",
     border_left_sign = "",
     border_right_sign = "",
     max_line_length = 120,
@@ -171,3 +171,5 @@ require("chatgpt").setup {
     help_description = "@comment",
   },
 }
+
+
