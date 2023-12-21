@@ -99,6 +99,30 @@ nvim_lsp.tsserver.setup {
     common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
+  settings = {
+    javascript = {
+      inlayHints = {
+        includeInlayEnumMemberValueHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayVariableTypeHints = true,
+      },
+    },
+    typescript = {
+      inlayHints = {
+        includeInlayEnumMemberValueHints = true,
+        includeInlayFunctionLikeReturnTypeHints = true,
+        includeInlayFunctionParameterTypeHints = true,
+        includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all';
+        includeInlayParameterNameHintsWhenArgumentMatchesName = true,
+        includeInlayPropertyDeclarationTypeHints = true,
+        includeInlayVariableTypeHints = true,
+      },
+    },
+  },
 }
 
 -- Terraform
@@ -111,7 +135,7 @@ nvim_lsp.tflint.setup {
 }
 
 -- Volar
-nvim_lsp.volar.setup {
+nvim_lsp.vls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     common_on_attach(client, bufnr)

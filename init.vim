@@ -98,6 +98,7 @@ runtime ./nvim-autopairs.lua
 runtime ./hop.lua
 runtime ./bool.lua
 runtime ./copilot.lua
+runtime ./gen.lua
 "}}}
 
 colorscheme tokyonight
