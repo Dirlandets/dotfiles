@@ -33,8 +33,6 @@ call plug#begin()
 
 
     " Color schemas
-    " Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-    " Plug 'tanvirtin/monokai.nvim'
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
     Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
     Plug 'klen/nvim-test'
@@ -98,5 +96,8 @@ call plug#begin()
 
     " Olama
     Plug 'David-Kunz/gen.nvim'
+    " ChatGPT
+    Plug 'jackMort/ChatGPT.nvim',
+    Plug 'MunifTanjim/nui.nvim',
 
 call plug#end()
