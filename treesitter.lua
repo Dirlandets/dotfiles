@@ -28,6 +28,7 @@ require('nvim-treesitter.configs').setup {
     "bash",
     "markdown",
     "markdown_inline",
+    "json",
   },
   -- Install parsers synchronously (only applied to `ensure_installed`)
   sync_install = false,
@@ -35,7 +36,7 @@ require('nvim-treesitter.configs').setup {
   -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
   auto_install = true,
   incremental_selection = {
-    enable = true,
+    enable = false,
     keymaps = {
       init_selection = "gnn",
       node_incnemental = "grn",

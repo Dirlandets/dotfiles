@@ -107,7 +107,6 @@ keymap('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', opts)
 -- Tests
 keymap('n', '<leader>rt', '<cmd>TestNearest<CR>', opts)
 
-
 -- Copilot
 keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 keymap("i", "<leader>w", "<cmd> lua require('copilot.suggestion').accept_word()<CR>", opts)
@@ -118,6 +117,13 @@ keymap("i", "<leader>n", "<cmd> lua require('copilot.suggestion').next()<CR>", o
 -- Olama
 keymap('v', '<leader>]', ':Gen<CR>', opts)
 keymap('n', '<leader>]', ':Gen<CR>', opts)
+
+-- ChatGPT
+keymap('v', '<leader>gt', ':ChatGPTEditWithInstructions<CR>', opts)
+
+-- ZenMode
+keymap('', "gz", ":ZenMode<CR>", opts)
+
 
 vim.keymap.set({ 'n', 'v' }, '<leader>tl', function()
   vim.api.nvim_command("colorscheme catppuccin-latte")

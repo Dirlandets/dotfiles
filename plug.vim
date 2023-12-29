@@ -16,8 +16,7 @@ call plug#begin()
 
     " Completion plugins
     Plug 'neovim/nvim-lspconfig'
-    Plug 'glepnir/lspsaga.nvim'
-    " Plug 'williamboman/nvim-lsp-installer'
+    Plug 'nvimdev/lspsaga.nvim'
 
     Plug 'hrsh7th/cmp-nvim-lsp'
     Plug 'hrsh7th/cmp-buffer'
@@ -25,12 +24,11 @@ call plug#begin()
     Plug 'hrsh7th/nvim-cmp'
     Plug 'hrsh7th/cmp-cmdline'
     Plug 'saadparwaiz1/cmp_luasnip'
-    Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*', 'do': 'make install_jsregexp'}
+    Plug 'L3MON4D3/LuaSnip', {'tag': 'v2.*', 'do': 'make install_jsregexp'}
     Plug 'rafamadriz/friendly-snippets'
 
     " Linters
     Plug 'mfussenegger/nvim-lint'
-
 
     " Color schemas
     Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
@@ -99,5 +97,10 @@ call plug#begin()
     " ChatGPT
     Plug 'jackMort/ChatGPT.nvim',
     Plug 'MunifTanjim/nui.nvim',
+
+    " Zen Mode
+    Plug 'folke/zen-mode.nvim',
+
+    Plug 'famiu/bufdelete.nvim'
 
 call plug#end()
