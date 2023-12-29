@@ -192,7 +192,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
   },
   live_filter = {
     prefix = "[FILTER]: ",
-    always_show_folders = true,
+    always_show_folders = false,
   },
   tab = {
     sync = {
