@@ -81,7 +81,7 @@ require("chatgpt").setup {
     win_options = {
       wrap = true,
       linebreak = true,
-      foldcolumn = "1",
+      foldcolumn = "2",
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
     },
     buf_options = {

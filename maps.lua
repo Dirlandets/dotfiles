@@ -68,7 +68,6 @@ keymap('', '<leader>fp', '<cmd>Telescope neoclip<cr>', opts)
 -- LSP LINES
 keymap('n', "<leader>ll", '<cmd>lua require("lsp_lines").toggle()<CR>', opts)
 -- LSP SAGA
--- use <C-t> to jump back
 keymap("n", "gh", "<cmd>Lspsaga finder<CR>", opts)
 
 -- Code action
