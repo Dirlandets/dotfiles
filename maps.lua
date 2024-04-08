@@ -3,9 +3,9 @@ local opts = { noremap = true, silent = false }
 local keymap = vim.api.nvim_set_keymap
 
 -- Remap leader key to leader
--- keymap("", "<leader>", "<Nop>", opts)
--- vim.g.mapleader = " "
--- vim.g.maplocalleader = " "
+keymap("", "<leader>", "<Nop>", opts)
+vim.g.mapleader = "\\"
+vim.g.maplocalleader = "\\"
 -- Close buffer
 keymap("n", "gw", "<cmd>Bdelete<CR>", opts)
 keymap("i", "gw", "<cmd>Bdelete<CR>", opts)
@@ -63,7 +63,6 @@ keymap('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
 keymap('n', '<leader>fg', '<cmd>Telescope live_grep<cr>', opts)
 keymap('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
 keymap('', '<leader>fp', '<cmd>Telescope neoclip<cr>', opts)
-keymap('', '<leader>fp', '<cmd>Telescope neoclip<cr>', opts)
 
 -- LSP LINES
 keymap('n', "<leader>ll", '<cmd>lua require("lsp_lines").toggle()<CR>', opts)
@@ -107,9 +106,9 @@ keymap('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', opts)
 keymap('n', '<leader>rt', '<cmd>TestNearest<CR>', opts)
 
 -- Copilot
-keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts)
 keymap("i", "<leader>w", "<cmd> lua require('copilot.suggestion').accept_word()<CR>", opts)
-keymap("i", "<leader>a", "<cmd> lua require('copilot.suggestion').accept_line()<CR>", opts)
+keymap("i", "<leader>l", "<cmd> lua require('copilot.suggestion').accept_line()<CR>", opts)
+keymap("i", "<leader>a", "<cmd> lua require('copilot.suggestion').accept()<CR>", opts)
 keymap("n", "<leader>ct", "<cmd> lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
 keymap("i", "<leader>n", "<cmd> lua require('copilot.suggestion').next()<CR>", opts)
 
@@ -122,7 +121,6 @@ keymap('v', '<leader>gt', ':ChatGPTEditWithInstructions<CR>', opts)
 
 -- ZenMode
 keymap('', "gz", ":ZenMode<CR>", opts)
-
 
 vim.keymap.set({ 'n', 'v' }, '<leader>tl', function()
   vim.api.nvim_command("colorscheme catppuccin-latte")

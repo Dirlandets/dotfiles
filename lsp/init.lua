@@ -5,27 +5,30 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities(
   vim.lsp.protocol.make_client_capabilities()
 )
 
-function common_on_attach(client, bufnr)
-  local bufopts = { noremap = true, silent = false }
-  vim.api.nvim_buf_set_keymap(
-    bufnr, 'n', 'gd',
-    '<cmd>lua vim.lsp.buf.definition()<CR>',
-    bufopts
-  )
-  vim.api.nvim_buf_set_keymap(
-    bufnr, 'n', 'gD',
-    '<cmd>lua vim.lsp.buf.declaration()<CR>',
-    bufopts
-  )
-  vim.keymap.set('n', '<space>df', function() vim.lsp.buf.format { async = true } end, bufopts)
-end
+vim.api.nvim_create_autocmd('LspAttach', {
+  desc = 'LSP actions',
+  callback = function(event)
+    local bufopts = { noremap = true, silent = false }
+    -- Go to definition
+    vim.api.nvim_set_keymap(
+      'n', 'gd',
+      '<cmd>lua vim.lsp.buf.definition()<CR>',
+      bufopts
+    )
+    vim.api.nvim_set_keymap(
+      'n', 'gD',
+      '<cmd>lua vim.lsp.buf.declaration()<CR>',
+      bufopts
+    )
+    vim.keymap.set('n', '<space>df', function() vim.lsp.buf.format { async = true } end, bufopts)
+  end
+})
 
 -- LUA
 nvim_lsp.lua_ls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_command('autocmd BufWritePre *.lua lua vim.lsp.buf.format(nil, 100)')
-    common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
   settings = {
@@ -49,7 +52,6 @@ nvim_lsp.rust_analyzer.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     vim.api.nvim_command('autocmd BufWritePre *.rs lua vim.lsp.buf.format(nil, 100)')
-    common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end
   ,
@@ -80,7 +82,6 @@ nvim_lsp.rust_analyzer.setup {
 nvim_lsp.pyright.setup {
   -- capabilities = capabilities,
   on_attach = function(client, bufnr)
-    common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
   pyton = {
@@ -92,11 +93,17 @@ nvim_lsp.pyright.setup {
   }
 }
 
+-- Arduino
+nvim_lsp.arduino_language_server.setup {
+  on_attach = function(client, bufnr)
+    navic.attach(client, bufnr)
+  end
+}
+
 -- TS
 nvim_lsp.tsserver.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
   settings = {
@@ -129,7 +136,6 @@ nvim_lsp.tsserver.setup {
 nvim_lsp.tflint.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
 }
@@ -138,7 +144,6 @@ nvim_lsp.tflint.setup {
 nvim_lsp.vls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
-    common_on_attach(client, bufnr)
     navic.attach(client, bufnr)
   end,
 }
@@ -154,7 +159,6 @@ nvim_lsp.eslint.setup {
     vim.api.nvim_command('autocmd! * <buffer>')
     vim.api.nvim_command('autocmd BufWritePre <buffer> lua vim.lsp.buf.format(nil, 200)')
     vim.api.nvim_command('augroup END')
-    common_on_attach(client, bufnr)
   end,
   settings = {
     format = { enable = true }, -- this will enable formatting

@@ -1,4 +1,5 @@
 require("chatgpt").setup {
+  api_key_cmd = nil,
   yank_register = "+",
   edit_with_instructions = {
     diff = false,
@@ -13,17 +14,17 @@ require("chatgpt").setup {
     },
   },
   chat = {
-    welcome_message = "Welcome to ChatGPT! Press <C-n> to start a new session.",
+    welcome_message = WELCOME_MESSAGE,
     loading_text = "Loading, please wait ...",
-    question_sign = "🤔",
-    answer_sign = "🤖",
+    question_sign = "",
+    answer_sign = " 🤖 ",
     border_left_sign = "",
     border_right_sign = "",
     max_line_length = 120,
     sessions_window = {
-      active_sign = " 🌕 ",
-      inactive_sign = " 🌑 ",
-      current_line_sign = "👺 ",
+      active_sign = " ? ",
+      inactive_sign = " - ",
+      current_line_sign = "",
       border = {
         style = "rounded",
         text = {
@@ -62,8 +63,8 @@ require("chatgpt").setup {
   popup_layout = {
     default = "center",
     center = {
-      width = "90%",
-      height = "90%",
+      width = "80%",
+      height = "80%",
     },
     right = {
       width = "30%",
@@ -75,13 +76,13 @@ require("chatgpt").setup {
       highlight = "FloatBorder",
       style = "rounded",
       text = {
-        top = "GPT",
+        top = " ChatGPT ",
       },
     },
     win_options = {
       wrap = true,
       linebreak = true,
-      foldcolumn = "2",
+      foldcolumn = "1",
       winhighlight = "Normal:Normal,FloatBorder:FloatBorder",
     },
     buf_options = {
@@ -168,5 +169,5 @@ require("chatgpt").setup {
   highlights = {
     help_key = "@symbol",
     help_description = "@comment",
-  },
+  }
 }
