@@ -58,7 +58,7 @@ call plug#begin()
     Plug 'nvim-orgmode/orgmode'
 
     " Telescope
-    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+    Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
     Plug 'AckslD/nvim-neoclip.lua'
 
     " LSP Extensions
