@@ -35,6 +35,6 @@ null_ls.setup {
   on_init = nil,
   on_exit = nil,
   root_dir = require("null-ls.utils").root_pattern(".null-ls-root", "Makefile", ".git"),
-  update_in_insert = false,
+  update_in_insert = true,
   sources = sources,
 }
