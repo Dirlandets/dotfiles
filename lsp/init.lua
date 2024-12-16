@@ -16,7 +16,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
       bufopts
     )
     vim.api.nvim_set_keymap(
-      'n', 'gD',
+      'n', 'gf',
       '<cmd>lua vim.lsp.buf.declaration()<CR>',
       bufopts
     )
@@ -101,7 +101,7 @@ nvim_lsp.arduino_language_server.setup {
 }
 
 -- TS
-nvim_lsp.tsserver.setup {
+nvim_lsp.ts_ls.setup {
   capabilities = capabilities,
   on_attach = function(client, bufnr)
     navic.attach(client, bufnr)

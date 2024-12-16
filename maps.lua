@@ -103,7 +103,7 @@ keymap('', '<leader>l', "<cmd>HopLineStart<cr>", opts)
 keymap('n', '<leader>tt', '<cmd>NvimTreeToggle<CR>', opts)
 
 -- Tests
-keymap('n', '<leader>rt', '<cmd>TestNearest<CR>', opts)
+keymap('n', '<leader>tn', '<cmd>TestNearest<CR>', opts)
 
 -- Copilot
 keymap("i", "<leader>w", "<cmd> lua require('copilot.suggestion').accept_word()<CR>", opts)

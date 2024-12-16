@@ -146,7 +146,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     timeout = 700,
   },
   modified = {
-    enable = false,
+    enable = true,
     show_on_dirs = true,
     show_on_open_dirs = true,
   },
@@ -191,7 +191,7 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     cmd = "gio trash",
   },
   live_filter = {
-    prefix = "[FILTER]: ",
+    prefix = "[F]: ",
     always_show_folders = false,
   },
   tab = {
@@ -208,11 +208,6 @@ require("nvim-tree").setup { -- BEGIN_DEFAULT_OPTS
     confirm = {
       remove = true,
       trash = true,
-    },
-  },
-  experimental = {
-    git = {
-      async = true,
     },
   },
   log = {

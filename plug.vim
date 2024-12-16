@@ -6,6 +6,7 @@ call plug#begin()
     Plug 'lewis6991/impatient.nvim'
     Plug 'mhinz/vim-startify'
     Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+
     Plug 'nvim-lua/plenary.nvim'
 
     " Closes brackets automaticaly
@@ -98,9 +99,18 @@ call plug#begin()
     Plug 'jackMort/ChatGPT.nvim',
     Plug 'MunifTanjim/nui.nvim',
 
+    Plug 'robitx/gp.nvim'
+
+
     " Zen Mode
     Plug 'folke/zen-mode.nvim',
 
     Plug 'famiu/bufdelete.nvim'
+
+    " DAP stuff
+    Plug 'mfussenegger/nvim-dap'
+    Plug 'mfussenegger/nvim-dap-python'
+    Plug 'nvim-neotest/nvim-nio'
+    Plug 'rcarriga/nvim-dap-ui'
 
 call plug#end()

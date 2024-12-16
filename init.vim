@@ -43,6 +43,7 @@ set nu rnu
 
 " spell languages
 set spelllang=en_us
+set spell
 
 " true color
 " termguicolor breaks the colors fix later
@@ -98,6 +99,9 @@ runtime ./bool.lua
 runtime ./copilot.lua
 runtime ./gen.lua
 runtime ./chatGPT.lua
+runtime ./dap.lua
+runtime ./gp.lua
+" runtime ./dap-python.lua
 "}}}
 
 colorscheme tokyonight
