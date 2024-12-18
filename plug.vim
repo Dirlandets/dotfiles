@@ -89,8 +89,6 @@ call plug#begin()
     Plug 'zbirenbaum/copilot.lua',
     Plug 'zbirenbaum/copilot-cmp',
 
-    " Olama
-    Plug 'David-Kunz/gen.nvim'
     " ChatGPT
     Plug 'jackMort/ChatGPT.nvim',
     Plug 'MunifTanjim/nui.nvim',
