@@ -1,3 +1,5 @@
+local MAX_FILE_SIZE = 200 * 1024 -- KB
+
 require('nvim-treesitter.configs').setup {
   highlight = {
     enable = true,
@@ -7,7 +9,7 @@ require('nvim-treesitter.configs').setup {
     -- Instead of true it can also be a list of languages
     additional_vim_regex_highlighting = false,
     disable = function(lang, buf)
-      local max_filesize = 100 * 1024 -- 100 KB
+      local max_filesize = MAX_FILE_SIZE
       local ok, stats = pcall(vim.loop.fs_stat, vim.api.nvim_buf_get_name(buf))
       if ok and stats and stats.size > max_filesize then
         return true

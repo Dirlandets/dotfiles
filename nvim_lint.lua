@@ -20,12 +20,13 @@ lint.linters.dmypy = {
 }
 
 lint.linters_by_ft = {
-  markdown = { 'vale', },
   python = { 'ruff', 'dmypy' }
 }
 
-vim.api.nvim_create_autocmd({ "BufWritePost", "BufRead", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "BufWritePost" }, {
   callback = function()
-    lint.try_lint()
+    -- try_lint without arguments runs the linters defined in `linters_by_ft`
+    -- for the current filetype
+    require("lint").try_lint()
   end,
 })

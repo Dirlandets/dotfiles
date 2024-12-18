@@ -20,7 +20,7 @@ local config = {
     -- secret : "sk-...",
     -- secret = os.getenv("env_name.."),
     openai = {
-      disable = false,
+      disable = true,
       endpoint = "https://api.openai.com/v1/chat/completions",
       -- secret = os.getenv("OPENAI_API_KEY"),
     },
@@ -39,7 +39,7 @@ local config = {
       },
     },
     ollama = {
-      disable = true,
+      disable = false,
       endpoint = "http://localhost:11434/v1/chat/completions",
       secret = "dummy_secret",
     },

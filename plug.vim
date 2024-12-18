@@ -53,10 +53,6 @@ call plug#begin()
     Plug 'numToStr/Comment.nvim'
 
     Plug 'windwp/nvim-ts-autotag'
-    " Markdown
-    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && npx --yes yarn install' }
-
-    Plug 'nvim-orgmode/orgmode'
 
     " Telescope
     Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.4' }
